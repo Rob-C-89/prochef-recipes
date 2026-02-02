@@ -1,1 +1,0 @@
-web: gunicorn prochefrecipes.wsgi:application
