@@ -1,1 +1,1 @@
-web: gunicorn prochefrecipes.wsgi
+web: gunicorn prochefrecipes.wsgi:application
