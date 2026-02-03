@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-# Create Recipe Post Model
+# Recipe Post Model
 class RecipePost(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -16,3 +16,17 @@ class RecipePost(models.Model):
 
     def __str__(self):
         return f"{self.title} | written by {self.author}"
+    
+
+# Comment Model
+class Comment(models.Model):
+    post = models.ForeignKey(
+        RecipePost, on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter")
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Comment {self.body} | by {self.author}"
+
