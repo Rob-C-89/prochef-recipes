@@ -6,4 +6,4 @@ from .models import RecipePost
 # Create your views here.
 class PostList(generic.ListView):
     queryset = RecipePost.objects.all()
-    template_name = "blog/recipe_list.html"
+    template_name = "blog/index.html"

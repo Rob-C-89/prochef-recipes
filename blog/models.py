@@ -11,8 +11,9 @@ class RecipePost(models.Model):
         User, on_delete=models.CASCADE, related_name="recipe_posts"
     )
     # Image code to go here
+    summary = models.TextField(max_length=200, blank=True)
     recipe_content = models.TextField()
-    date_created = models.DateTimeField(auto_now_add=True, null=True)
+    date_created = models.DateField(auto_now_add=True, null=True)
 
     class Meta:
         ordering = ["-date_created"]
