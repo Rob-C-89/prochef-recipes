@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import RecipePost
 
 
 # Create your views here.
-def my_blog(request):
-    return HttpResponse("Hello, blog!")
+class PostList(generic.ListView):
+    queryset = RecipePost.objects.all()
+    template_name = "blog/recipe_list.html"
