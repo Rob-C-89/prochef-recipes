@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+
+<div class="container">
+    <div class="row">
+        <div class="col col-md-6">
+            <img src="{% static 'images/default.png' %}" class="detail-image" alt="default image">
+        </div>
+        <div class="col col-md-6">
+            <h1 class="post-title">{{ post.title }}</h1>
+            <p class="post-summary">{{ post.summary }}</p>
+            <p class="post-author">{{ post.author }}</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p class="post-content">{{ post.recipe_content }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
