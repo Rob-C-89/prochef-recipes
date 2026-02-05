@@ -16,7 +16,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <p class="post-content">{{ post.recipe_content }}</p>
+            <p class="post-content">{{ post.recipe_content | safe }}</p>
         </div>
     </div>
 </div>
