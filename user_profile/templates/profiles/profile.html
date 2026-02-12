@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<h1 class="profile-name">{{ profile.user }}</h1>
+<p class="post-bio">{{ profile.bio }}</p>
+<p class="post-current-role">{{ profile.recent_role }}</p>
+
+
+{% endblock content %}

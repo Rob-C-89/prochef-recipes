@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from blog.models import RecipePost
 from cloudinary.models import CloudinaryField
 
 
@@ -8,11 +7,9 @@ from cloudinary.models import CloudinaryField
 class UserProfile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name='profile_name')
-    profile_pic = CloudinaryField('image', default='#')
+    profile_pic = CloudinaryField('image', default='placeholder')
     recent_role = models.TextField(blank=True)
     bio = models.TextField(blank=True)
-    posts = models.ForeignKey(
-        RecipePost, on_delete=models.CASCADE, related_name="previous_posts")
     created_at = models.DateTimeField(auto_now_add=True)
 
 
