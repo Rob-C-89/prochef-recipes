@@ -9,7 +9,7 @@
         <div class="col col-md-6">
             <h1 class="post-title">{{ post.title }}</h1>
             <p class="post-summary">{{ post.summary }}</p>
-            <p class="post-author">{{ post.author }}</p>
+            <p class="post-author">Posted by <a href="{% url 'view_profile' post.author.username %}">{{ post.author }}</a></p>
         </div>
     </div>
 </div>
