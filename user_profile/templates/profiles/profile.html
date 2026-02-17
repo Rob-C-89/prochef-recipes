@@ -1,11 +1,22 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
+{% block content %}
 
+<div class="profile-page">
+	<h1 class="profile-name">Name:{{ profile.user.username }}</h1>
+	<p class="profile-current-role">Current or most recent Role:{{ profile.recent_role }}</p>
+	<p class="profile-bio">Biography:{{ profile.bio }}</p>
 
-<h1 class="profile-name">{{ profile.user }}</h1>
-<p class="post-bio">{{ profile.bio }}</p>
-<p class="post-current-role">{{ profile.recent_role }}</p>
-
+	<h2>User posts ({{ posts_count }})</h2>
+	<ul class="user-posts">
+		{% for post in user_posts %}
+			<li>
+				<a href="#">{{ post.title }}</a> — <small>{{ post.date_created }}</small>
+			</li>
+		{% empty %}
+			<li>No posts yet.</li>
+		{% endfor %}
+	</ul>
+</div>
 
 {% endblock content %}

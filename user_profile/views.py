@@ -1,4 +1,5 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from blog.models import RecipePost
@@ -43,8 +44,6 @@ def edit_profile(request):
     
     return render(request, 'profiles/edit_profile.html', {'profile_form': profile_form})
 
-
-
 # View own profile as logged in user.
 @login_required
 def my_profile(request):
@@ -64,3 +63,20 @@ def my_profile(request):
     }
     
     return render(request, 'profiles/my_profile.html', context)
+
+# View another user's profile by their username.
+def view_profile(request, username):
+    """Display another user's profile by their username"""
+    user = get_object_or_404(User, username=username)
+    profile = get_object_or_404(UserProfile, user=user)
+    
+    # Get all posts by this user
+    user_posts = RecipePost.objects.filter(author=profile.user).order_by('-date_created')
+    
+    context = {
+        'profile': profile,
+        'user_posts': user_posts,
+        'posts_count': user_posts.count(),
+    }
+    
+    return render(request, 'profiles/profile.html', context)
