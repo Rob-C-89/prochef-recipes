@@ -1,5 +1,8 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 {% load static %}
+{% load crispy_forms_tags %}
+
 
 <div class="container">
     <div class="row">
@@ -20,5 +23,43 @@
         </div>
     </div>
 </div>
+<!-- Display comments -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Comments</h2>
+            {% for comment in comments %}
+                <div class="comment">
+                    <p class="comment-author">{{ comment.author.username }} said:</p>
+                    <p class="comment-content">{{ comment.body }}</p>
+                    <p class="comment-date">{{ comment.created_on }}</p>
+            {% endfor %}  
+    </div>
+</div>
+<!-- Comment form -->
+{% if user.is_authenticated %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Leave a Comment</h2>
+            <p> Posting as: {{ user.username }}</p>
+            <form id="comment-form" method="post">
+                {% csrf_token %}
+                {{ comment_form|crispy }}
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p><a href="{% url 'account_login' %}">Log in</a> to leave a comment.</p>
+        </div>
+    </div>
+</div>
+{% endif %}
 
 {% endblock content %}
