@@ -1,7 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block content %}
+{% load crispy_forms_tags %}
 
+
+{% block title %}Create Profile{% endblock %}
+
+{% block content %}
 <h1>Create Your Profile</h1>
 
-{% endblock content %}
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ profile_form|crispy }}
+  <button type="submit">Create Profile</button>
+</form>
+
+<p><a href="{% url 'home' %}">Skip for now</a></p>
+{% endblock %}
