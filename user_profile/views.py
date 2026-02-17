@@ -8,9 +8,11 @@ from .forms import UserProfileForm
 
 @login_required
 def create_profile(request):
+    """ Create a user profile for the logged-in user """
     # If user already has a profile, redirect to their profile page
     if hasattr(request.user, 'profile_name'):
         return redirect('my_profile')
+    
     if request.method == 'POST':
         profile_form = UserProfileForm(request.POST, request.FILES)
         if profile_form.is_valid():
@@ -21,6 +23,25 @@ def create_profile(request):
     else:
         profile_form = UserProfileForm()
     return render(request, 'profiles/create_profile.html', {'profile_form': profile_form})
+
+# Edit profile as logged in user.
+@login_required
+def edit_profile(request):
+    """Allow the logged-in user to edit their profile"""
+    try:
+        profile = UserProfile.objects.get(user=request.user)
+    except UserProfile.DoesNotExist:
+        return redirect('create_profile')
+    
+    if request.method == 'POST':
+        profile_form = UserProfileForm(request.POST, request.FILES, instance=profile)
+        if profile_form.is_valid():
+            profile_form.save()
+            return redirect('my_profile')
+    else:
+        profile_form = UserProfileForm(instance=profile)
+    
+    return render(request, 'profiles/edit_profile.html', {'profile_form': profile_form})
 
 
 
