@@ -1,6 +1,9 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic
+from django.contrib import messages
+from django.http import HttpResponseRedirect
 from .models import RecipePost, Comment
+from django.contrib.auth.decorators import login_required
 from .forms import CommentForm
 
 
@@ -38,4 +41,18 @@ def post_detail(request, slug):
         },
     )
 
+# Delete comment as logged in user.
+@login_required
+def delete_comment(request, slug, comment_id):
+    """ Delete a comment if the logged in user is the author of the comment."""
+    queryset = RecipePost.objects.all()
+    post = get_object_or_404(queryset, slug=slug)
+    comment = get_object_or_404(Comment, pk=comment_id)
 
+    if comment.author == request.user:
+        comment.delete()
+        messages.add_message(request, messages.SUCCESS, "Comment deleted successfully.")
+    else:
+        messages.add_message(request, messages.ERROR, "You do not have permission to delete this comment.")
+
+    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
