@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -10,7 +11,7 @@ class RecipePost(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="recipe_posts"
     )
-    # Image code to go here
+    image = CloudinaryField('image', default='placeholder')
     summary = models.TextField(max_length=200, blank=True)
     recipe_content = models.TextField()
     date_created = models.DateField(auto_now_add=True, null=True)

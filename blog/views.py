@@ -2,16 +2,18 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.utils.text import slugify
 from .models import RecipePost, Comment
 from django.contrib.auth.decorators import login_required
-from .forms import CommentForm
+from .forms import CommentForm, RecipeForm
 
 
-# Create your views here.
+# Ppst list view to show all recipes on the home page.
 class PostList(generic.ListView):
     queryset = RecipePost.objects.all()
     template_name = "blog/index.html"
 
+# Post detail view to show the details of a recipe and its comments.
 def post_detail(request, slug):
     queryset = RecipePost.objects.all()
     post = get_object_or_404(queryset, slug=slug)
@@ -40,6 +42,23 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+
+# Post recipe as logged in user.
+@login_required
+def post_recipe(request):
+    """ View to post a recipe. """
+    if request.method == 'POST':
+        recipe_form = RecipeForm(request.POST, request.FILES)
+        if recipe_form.is_valid():
+            recipe_post = recipe_form.save(commit=False)
+            recipe_post.author = request.user
+            recipe_post.slug = slugify(recipe_post.title)
+            recipe_post.save()
+            messages.add_message(request, messages.SUCCESS, "Recipe posted successfully.")
+            return redirect('home')
+    else:
+        recipe_form = RecipeForm()
+    return render(request, 'blog/post_recipe.html', {'recipe_form': recipe_form})
 
 # Delete comment as logged in user.
 @login_required

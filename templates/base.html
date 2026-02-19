@@ -48,9 +48,15 @@
               >
             </li>
             {% if user.is_authenticated %}
+            <!-- My Profile link -->
             <li class="nav-item">
               <a class="nav-link" href="{% url 'my_profile' %}">My Profile</a>
             </li>
+            <!-- Post a recipe link -->
+            <li class="nav-item">
+              <a href="{% url 'post_recipe' %}" class="nav-link">Post Recipe</a>
+            </li>
+            <!-- Logout link -->
             <li class="nav-item">
               <a
                 class="nav-link {% if request.path == logout_url %}active{% endif %}"
@@ -61,6 +67,7 @@
             </li>
 
             {% else %}
+            <!-- Register link -->
             <li class="nav-item">
               <a
                 class="nav-link {% if request.path == signup_url %}active{% endif %}"
@@ -69,6 +76,7 @@
                 >Register</a
               >
             </li>
+            <!-- Login link -->
             <li class="nav-item">
               <a
                 class="nav-link {% if request.path == login_url %}active{% endif %}"
