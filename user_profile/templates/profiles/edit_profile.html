@@ -13,12 +13,11 @@
 
       <form method="POST" enctype="multipart/form-data">
         {% csrf_token %} {{ profile_form|crispy }}
-        <button type="submit">Save Changes</button>
+        <button class="button" type="submit">Save Changes</button>
+        <button class="button cancel-btn"><a href="{% url 'home' %}">Cancel</a></button>
       </form>
-
-      <p><a href="{% url 'home' %}">Cancel</a></p>
-
-      {% endblock %}
     </div>
   </div>
 </div>
+{% endblock %}
+

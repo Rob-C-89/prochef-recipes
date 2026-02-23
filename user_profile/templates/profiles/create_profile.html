@@ -6,13 +6,17 @@
 {% block title %}Create Profile{% endblock %}
 
 {% block content %}
-<h1>Create Your Profile</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-4">
+      <h1>Create Your Profile</h1>
 
-<form method="POST" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{ profile_form|crispy }}
-  <button type="submit">Create Profile</button>
-</form>
-
-<p><a href="{% url 'home' %}">Skip for now</a></p>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %} {{ profile_form|crispy }}
+        <button class="button" type="submit">Save</button>
+        <button class="button cancel-btn"><a href="{% url 'home' %}">Cancel</a></button>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
