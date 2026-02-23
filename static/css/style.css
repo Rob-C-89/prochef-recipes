@@ -15,6 +15,37 @@ body {
     background-color: var(--primary-color)
 }
 
+.button {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;    
+}
+
+.button:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Container Styling */
+
+.recipe-post-container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 0;
+}
+
+.container {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
 /* Navbar Styling */
 
 .navbar {
@@ -80,21 +111,7 @@ body {
     line-height: 1.6;
 }
 
-/* Container Styling */
 
-.recipe-post-container {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2rem 0;
-}
-
-.container {
-    background-color: var(--secondary-color);
-    padding: 2rem;
-    border-radius: 8px;
-    margin-top: 2rem;
-}
 
 /* Recipe Card Styling */
 .card {
@@ -121,15 +138,6 @@ body {
     line-height: 1.6;
 }
 
-.post-link {
-    text-decoration: none;
-    color: var(--primary-color);
-}
-
-.post-link:hover {
-    color: var(--accent-color);
-}
-
 .card a {
     color: var(--accent-color);
     text-decoration: none;
@@ -146,9 +154,21 @@ body {
     max-height: 200px;
 }
 
+/* Post Detail Styling */
+
 .detail-image {
-    max-width:100%;
-    max-height:100%;
+    max-width:75%;
+    height: auto;
+}
+
+.user-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.user-link:hover {
+    color: var(--primary-color);
 }
 
 
@@ -168,5 +188,20 @@ body {
     
     .hero-content {
         padding: 1rem;
+    }
+}
+
+/* Container Adjustments for Responsiveness */
+@media screen and (min-width: 1200px) {
+    
+    .reduced-width {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    
+    .reduced-width {
+        width: 85%;
     }
 }

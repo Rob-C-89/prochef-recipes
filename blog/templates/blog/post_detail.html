@@ -3,44 +3,48 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-<div class="container">
+<div class="container reduced-width">
   <div class="row">
     <div class="col col-md-6">
+      <!-- Display default placeholder image if none uploaded-->
       {% if "placeholder" in post.image.url %}
-      <img src="{% static 'images/default.png' %}" class="img-fluid"
+      <img src="{% static 'images/default.png' %}" class="fluid detail-image" alt="Default image of a cook's workstation"
       alt="placeholder image">
       {% else %}
       <img
         src="{{ post.image.url }}"
-        class="scale"
+        class="fluid detail-image"
         alt="Image for {{ post.title }}"
       />
       {% endif %}
     </div>
+    <!-- Display post details -->
     <div class="col col-md-6">
       <h1 class="post-title">{{ post.title }}</h1>
       <p class="post-summary">{{ post.summary }}</p>
       <p class="post-author">
         Posted by
-        <a href="{% url 'view_profile' post.author.username %}"
+        <a href="{% url 'view_profile' post.author.username %}" class="user-link"
           >{{ post.author }}</a
         >
       </p>
     </div>
   </div>
 </div>
-<div class="container">
+<!-- Display recipe content -->
+<div class="container reduced-width">
   <div class="row">
     <div class="col">
+      <h3>Recipe:</h3>
       <p class="post-content">{{ post.recipe_content | safe }}</p>
     </div>
   </div>
 </div>
 <!-- Display comments -->
-<div class="container">
+<div class="container reduced-width">
   <div class="row">
     <div class="col">
-      <h2>Comments</h2>
+      <h3>Comments:</h3>
       {% for comment in comments %}
       <div class="comment">
         <p class="comment-author">{{ comment.author.username }} said:</p>
@@ -50,7 +54,7 @@
         <p class="comment-date">{{ comment.created_on }}</p>
         <!-- Delete button for logged in author of comment -->
         {% if user.is_authenticated and comment.author == user %}
-        <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+        <button class="button btn-delete" comment_id="{{ comment.id }}">Delete</button>
         {% endif %}
       </div>
       {% endfor %}
@@ -58,14 +62,14 @@
   </div>
   <!-- Comment form -->
   {% if user.is_authenticated %}
-  <div class="container">
+  <div class="container reduced-width">
     <div class="row">
       <div class="col">
         <h2>Leave a Comment</h2>
         <p>Posting as: {{ user.username }}</p>
         <form id="comment-form" method="post">
           {% csrf_token %} {{ comment_form|crispy }}
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" class="button">
             Submit
           </button>
         </form>
@@ -73,7 +77,7 @@
     </div>
   </div>
   {% else %}
-  <div class="container">
+  <div class="container reduced-width">
     <div class="row">
       <div class="col">
         <p>
