@@ -6,13 +6,25 @@
 {% block title %}Create Recipe{% endblock %}
 
 {% block content %}
-<h1>Create and Post Your Recipe</h1>
-
-<form method="POST" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{ recipe_form|crispy }}
-  <button type="submit">Post Recipe</button>
-</form>
-<p><a href="{% url 'home' %}">Back to Home</a></p>
+<div class="container reduced-width">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center form-heading">Create and Post Your Recipe</h1>
+      <p class="text-center form-subheading">Share your culinary creations with the ProChef community</p>
+    </div>
+  </div>
+  
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-10">
+      <form method="POST" enctype="multipart/form-data" class="recipe-form">
+        {% csrf_token %}
+        {{ recipe_form|crispy }}
+        <div class="form-actions text-center mt-4">
+          <button type="submit" class="button submit-btn">Post Recipe</button>
+          <a href="{% url 'home' %}" class="button cancel-btn">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
-
