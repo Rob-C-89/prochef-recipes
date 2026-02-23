@@ -2,29 +2,77 @@
 {% load static %}
 {% block content %}
 
-<div class="container">
+<div class="container reduced-width">
   <div class="row">
-    <div class="col-md-6 col-lg-4">
-	<h1 class="profile-name">Name:{{ profile.user.username }}</h1>
-	{% if 'placeholder' in profile.profile_pic.url %}
-	<img src="{% static 'images/default_profile.jpg' %}" class="img-fluid profile-picture" alt="Default profile picture">
-	{% else %}
-	<img src="{{ profile.profile_pic.url }}" class="img-fluid profile-picture" alt="Profile picture for {{ profile.user.username }}">
-	{% endif %}
-	<p class="profile-current-role">Current or most recent Role:{{ profile.recent_role }}</p>
-	<p class="profile-bio">Biography:{{ profile.bio }}</p>
-
-	<h2>User posts ({{ posts_count }})</h2>
-	<ul class="user-posts">
-		{% for post in user_posts %}
-			<li>
-				<a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a> — <small>{{ post.date_created }}</small>
-			</li>
-		{% empty %}
-			<li>No posts yet.</li>
-		{% endfor %}
-	</ul>
+    <div class="col">
+	  <h1 class="profile-name text-center">{{ profile.user.username }}</h1>
 	</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+	  <!-- Display profile picture or default if none uploaded -->
+      {% if 'placeholder' in profile.profile_pic.url %}
+	  <img src="{% static 'images/default_profile.jpg' %}" class="img-fluid profile-picture" alt="Default profile picture">
+	  {% else %}
+	  <img src="{{ profile.profile_pic.url }}" class="img-fluid profile-picture" alt="Profile picture for {{ profile.user.username }}">
+	  {% endif %}
+    </div>
+    <div class="col-md-6">
+	  <p class="profile-current-role">Current Role: <br>
+		{{ profile.recent_role }}</p>
+	  <p class="profile-bio">Biography: <br>
+		{{ profile.bio }}</p>
+    </div>
+  </div>
+  <!-- Display user's recipe posts -->
+  <div class="row mt-4">
+    <div class="col-12">
+	  <h2 class="text-center mb-4">Recipes</h2>
+    </div>
+  </div>
+  
+  <div class="row">
+    {% for post in user_posts %}
+    <div class="col-12 col-md-6 col-lg-4 mb-3">
+      <div class="card h-100">
+        <div class="row g-0 h-100">
+          <div class="col-md-12">
+            {% if "placeholder" in post.image.url %}
+            <img
+              class="img-fluid card-img-top"
+              src="{% static 'images/default.png' %}"
+              alt="placeholder image"
+            />
+            {% else %}
+            <img
+              class="img-fluid card-img-top"
+              src="{{ post.image.url }}"
+              alt="{{ post.title }}"
+            />
+            {% endif %}
+          </div>
+          <div class="col-md-12">
+            <div class="card-body">
+              <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                <h5 class="card-title">{{ post.title }}</h5>
+              </a>
+              <p class="card-text">
+                {{ post.summary }}
+              </p>
+              <p class="card-text">
+                <small class="text-body-secondary">created {{ post.date_created }}</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+      <p class="text-center">No posts yet.</p>
+    </div>
+    {% endfor %}
   </div>
 </div>
 
