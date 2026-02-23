@@ -3,8 +3,23 @@
 {% load static %}
 {% block content %}
 
-<div class="container-fluid recipe-post-container">
-  <h1>Recipes</h1>
+<header class="hero-header">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to ProChef Recipes</h1>
+      <p class="hero-subtitle">
+        Discover and share your favorite recipes with our passionate
+        community of professional cooks. Whether you're a seasoned chef or
+        just starting out, ProChef Recipes is the perfect place to find
+        inspiration, share your best recipes, and connect with industry experts. 
+        Join us today and start exploring a world of
+        delicious possibilities!
+      </p>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid recipe-post-container mt-4">
   <div class="row">
     {% for post in object_list %}
     <div class="card mb-3" style="max-width: 540px">
@@ -12,13 +27,13 @@
         <div class="col-md-4">
                 {% if "placeholder" in post.image.url %}
                 <img
-                  class="img-fluid rounded-start"
+                  class="img-fluid"
                   src="{% static 'images/default.png' %}"
                   alt="placeholder image"
                 />
                 {% else %}
                 <img
-                  class="img-fluid rounded-start"
+                  class="img-fluid"
                   src="{{ post.image.url }}"
                   alt="{{ post.title }}"
                 />
