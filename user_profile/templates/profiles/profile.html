@@ -2,8 +2,15 @@
 {% load static %}
 {% block content %}
 
-<div class="profile-page">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-4">
 	<h1 class="profile-name">Name:{{ profile.user.username }}</h1>
+	{% if 'placeholder' in profile.profile_pic.url %}
+	<img src="{% static 'images/default_profile.jpg' %}" class="img-fluid profile-picture" alt="Default profile picture">
+	{% else %}
+	<img src="{{ profile.profile_pic.url }}" class="img-fluid profile-picture" alt="Profile picture for {{ profile.user.username }}">
+	{% endif %}
 	<p class="profile-current-role">Current or most recent Role:{{ profile.recent_role }}</p>
 	<p class="profile-bio">Biography:{{ profile.bio }}</p>
 
@@ -11,12 +18,14 @@
 	<ul class="user-posts">
 		{% for post in user_posts %}
 			<li>
-				<a href="#">{{ post.title }}</a> — <small>{{ post.date_created }}</small>
+				<a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a> — <small>{{ post.date_created }}</small>
 			</li>
 		{% empty %}
 			<li>No posts yet.</li>
 		{% endfor %}
 	</ul>
+	</div>
+  </div>
 </div>
 
 {% endblock content %}
