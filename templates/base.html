@@ -88,7 +88,8 @@
             {% endif %}
           </ul>
           {% if user.is_authenticated %}
-          <span class="navbar-text text-muted">You are logged in as {{ user.username }}
+          <span class="navbar-text text-muted"
+            >You are logged in as {{ user.username }}
           </span>
           {% endif %}
         </div>
@@ -99,9 +100,17 @@
     {% if messages %}
     <div class="container mt-3" id="messages-container">
       {% for message in messages %}
-      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <div
+        class="alert alert-{{ message.tags }} alert-dismissible fade show"
+        role="alert"
+      >
         {{ message }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
       </div>
       {% endfor %}
     </div>
@@ -113,17 +122,71 @@
       <!-- Content is loaded here-->
       {% endblock %}
     </main>
-    <!-- Footer-->
-    <footer class="footer"></footer>
+
+    <!-- Footer -->
+      <footer
+        class="d-flex flex-wrap justify-content-between align-items-center py-3 mt-4 border-top"
+      >
+        <div class="col-md-4 container-md d-flex align-items-center">
+          <span class="mb-3 mb-md-0 ms-5"
+            >© 2025 ProChef Recipes</span
+          >
+        </div>
+        <div class="col-md-4 container-md d-flex justify-content-center">
+          <span class="contact-link">Contact us</span>
+        </div>
+        <ul class="nav col-md-4 container-md justify-content-end list-unstyled d-flex">
+          <li class="ms-3">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit our facebook page (opens in new tab)"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit our instagram page (opens in new tab)"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li class="ms-3 me-5">
+            <a
+              href="https://uk.pinterest.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit our pinterest page (opens in new tab)"
+            >
+              <i class="fa-brands fa-pinterest"></i>
+            </a>
+          </li>
+        </ul>
+      </footer>
+
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-    crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Custom JS -->
     <script src="{% static 'js/messages.js' %}"></script>
-    {% block extras %}
-    {% endblock %}
+    <!-- Font Awesome-->
+    <script
+      src="https://kit.fontawesome.com/67ad4e25fa.js"
+      crossorigin="anonymous"
+    ></script>
+    {% block extras %} {% endblock %}
   </body>
 </html>

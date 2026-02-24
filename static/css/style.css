@@ -296,6 +296,27 @@ body {
     border-radius: 4px;
 }
 
+/* Footer Styling */
+footer {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 1rem 0;
+    margin: 0;
+}
+
+.fa-brands {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+}
+
+.contact-link {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .hero-header {
