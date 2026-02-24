@@ -6,20 +6,20 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container form-container">
   <div class="row">
-    <div class="col-md-6 col-lg-4">
-      <h2 class="mb-4">{% trans "Sign In" %}</h2>
-
-            <p>{% blocktrans %}Welcome to ProChef Recipes! To post your own recipe, or
-        comment on other recipes, please log in. If you don't have an account
-        yet, then please <a class="link" href="{{ signup_url }}">sign up</a>
-        first.
-{% endblocktrans %}</p>
+    <div class="col-12">
+      <h2 class="mb-4 form-heading text-center">{% trans "Sign In" %}</h2>
+        <p class="text-center form-subheading">{% blocktrans %}Welcome to ProChef Recipes!
+          To post your own recipe, or comment on other recipes, please log in. If you don't have an account
+          yet, then please <a class="link" href="{{ signup_url }}">sign up</a>
+          first.
+          {% endblocktrans %}
+        </p>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-6 col-lg-4">
+  <div class="row justify-content-center">
+    <div class="col-8 col-md-6">
       <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
         <input

@@ -6,15 +6,16 @@
 {% block title %}Edit Profile{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 col-lg-4">
-      <h1>Edit Your Profile</h1>
-
-      <form method="POST" enctype="multipart/form-data">
+<div class="container form-container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-10">
+      <h1 class="text-center form-heading">Edit Your Profile</h1>
+      <form method="POST" enctype="multipart/form-data" class="form generic-form">
         {% csrf_token %} {{ profile_form|crispy }}
-        <button class="button" type="submit">Save Changes</button>
-        <button class="button cancel-btn"><a href="{% url 'home' %}">Cancel</a></button>
+        <div class="form-actions text-center mt-4">
+          <button class="button submit-btn" type="submit">Save Changes</button>
+          <a href="{% url 'home' %}" class="button cancel-btn">Cancel</a>
+        </div>
       </form>
     </div>
   </div>

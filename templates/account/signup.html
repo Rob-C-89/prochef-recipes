@@ -27,6 +27,7 @@
         method="post"
         action="{% url 'account_signup' %}"
       >
+      <div class="mt-4">
         {% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
         <input
           type="hidden"
@@ -34,9 +35,11 @@
           value="{{ redirect_field_value }}"
         />
         {% endif %}
-        <button class="button" type="submit">
+        <button class="button submit-btn" type="submit">
           {% trans "Sign Up" %} &raquo;
         </button>
+        <a href="{% url 'home' %}" class="button cancel-btn">Cancel</a>
+      </div>
       </form>
     </div>
   </div>
