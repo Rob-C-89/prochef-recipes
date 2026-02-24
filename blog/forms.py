@@ -10,3 +10,8 @@ class RecipeForm(forms.ModelForm):
     class Meta:
         model = RecipePost
         fields = ('title', 'image', 'summary', 'recipe_content')
+
+class EditRecipeForm(forms.ModelForm):
+    class Meta:
+        model = RecipePost
+        fields = ('title', 'image', 'summary', 'recipe_content')

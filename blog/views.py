@@ -60,6 +60,30 @@ def post_recipe(request):
         recipe_form = RecipeForm()
     return render(request, 'blog/post_recipe.html', {'recipe_form': recipe_form})
 
+# Edit recipe as logged in user using post pk.
+@login_required
+def edit_recipe(request, pk):
+    """ View to edit a recipe. """
+    recipe_post = get_object_or_404(RecipePost, pk=pk)
+
+    if request.user != recipe_post.author:
+        messages.add_message(request, messages.ERROR, "You do not have permission to edit this recipe.")
+        return redirect('home')
+
+    if request.method == 'POST':
+        recipe_form = RecipeForm(request.POST, request.FILES, instance=recipe_post)
+        if recipe_form.is_valid():
+            edited_recipe = recipe_form.save(commit=False)
+            edited_recipe.slug = slugify(edited_recipe.title)
+            edited_recipe.save()
+            messages.add_message(request, messages.SUCCESS, "Recipe updated successfully.")
+            return redirect('post_detail', slug=edited_recipe.slug)
+    else:
+        recipe_form = RecipeForm(instance=recipe_post)
+
+    return render(request, 'blog/edit_recipe.html', {'recipe_form': recipe_form, 'recipe_post': recipe_post})
+
+
 # Delete comment as logged in user.
 @login_required
 def delete_comment(request, slug, comment_id):
