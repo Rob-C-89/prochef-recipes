@@ -13,6 +13,7 @@ from .forms import CommentForm, RecipeForm
 class PostList(generic.ListView):
     queryset = RecipePost.objects.all()
     template_name = "blog/index.html"
+    paginate_by = 8
 
 # Post detail view to show the details of a recipe and its comments.
 def post_detail(request, slug):

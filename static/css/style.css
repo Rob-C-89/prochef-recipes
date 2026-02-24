@@ -187,6 +187,12 @@ body {
     max-height: 200px;
 }
 
+.card .col-md-4 {
+    height: 200px;
+    overflow: hidden;
+}
+
+
 /* Post Detail Styling */
 
 .detail-image {
@@ -274,6 +280,21 @@ body {
     transition: border-color 0.3s ease;
 }
 
+/* Pagination Styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.page-link {
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.5rem 0.75rem;
+    margin: 0 0.25rem;
+    text-decoration: none;
+    border-radius: 4px;
+}
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
