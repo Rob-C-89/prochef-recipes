@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.utils.text import slugify
 from .models import RecipePost, Comment
+from user_profile.models import UserProfile
 from django.contrib.auth.decorators import login_required
 from .forms import CommentForm, RecipeForm
 
@@ -47,6 +48,15 @@ def post_detail(request, slug):
 @login_required
 def post_recipe(request):
     """ View to post a recipe. """
+    user_profile_exists = UserProfile.objects.filter(user=request.user).exists()
+    if not user_profile_exists:
+        messages.add_message(
+            request,
+            messages.ERROR,
+            "Create a profile before posting a recipe.",
+        )
+        return redirect('create_profile')
+
     if request.method == 'POST':
         recipe_form = RecipeForm(request.POST, request.FILES)
         if recipe_form.is_valid():
@@ -58,7 +68,11 @@ def post_recipe(request):
             return redirect('home')
     else:
         recipe_form = RecipeForm()
-    return render(request, 'blog/post_recipe.html', {'recipe_form': recipe_form})
+    return render(
+        request,
+        'blog/post_recipe.html',
+        {'recipe_form': recipe_form, 'user_profile_exists': True},
+    )
 
 # Edit recipe as logged in author.
 @login_required
