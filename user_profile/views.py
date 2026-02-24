@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import UserProfile
 from blog.models import RecipePost
 from .forms import UserProfileForm
@@ -44,6 +45,23 @@ def edit_profile(request):
     
     return render(request, 'profiles/edit_profile.html', {'profile_form': profile_form})
 
+# Delete profile as logged in user.
+@login_required
+def delete_profile(request):
+    """Delete the logged-in user's profile"""
+    try:
+        profile = UserProfile.objects.get(user=request.user)
+    except UserProfile.DoesNotExist:
+        return redirect('my_profile')
+    
+    profile.delete()
+    messages.add_message(
+        request,
+        messages.SUCCESS,
+        "Your profile has been deleted."
+    )
+    return redirect('home')
+
 # View own profile as logged in user.
 @login_required
 def my_profile(request):
@@ -80,3 +98,5 @@ def view_profile(request, username):
     }
     
     return render(request, 'profiles/profile.html', context)
+
+
