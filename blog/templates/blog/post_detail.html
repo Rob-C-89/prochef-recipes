@@ -37,11 +37,18 @@
     <div class="col">
       <h3>Recipe:</h3>
       <p class="post-content">{{ post.recipe_content | safe }}</p>
-            {% if user.is_authenticated and post.author == user %}
+      {% if user.is_authenticated and post.author == user %}
       <div class="post-actions">
         <a href="{% url 'edit_recipe' post.pk %}" class="button edit-btn">Edit</a>
-      {% endif %}
+        <button
+          type="button"
+          class="button delete-recipe-btn"
+          data-delete-url="{% url 'delete_recipe' post.pk %}"
+        >
+          Delete
+        </button>
       </div>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -59,7 +66,13 @@
         <p class="comment-date">{{ comment.created_on }}</p>
         <!-- Delete button for logged in author of comment -->
         {% if user.is_authenticated and comment.author == user %}
-        <button class="button btn-delete" comment_id="{{ comment.id }}">Delete</button>
+        <button
+          type="button"
+          class="button delete-comment-btn"
+          data-delete-url="{% url 'delete_comment' post.slug comment.id %}"
+        >
+          Delete
+        </button>
         {% endif %}
       </div>
       {% endfor %}
@@ -93,8 +106,28 @@
   </div>
   {% endif %}
 
-  <!-- Modal for delete confirmation -->
-  <div class="modal" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <!-- Modal for delete recipe confirmation -->
+  <div class="modal" id="deleteRecipeModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete Recipe</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this recipe? Action can not be undone.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a id="deleteRecipeConfirm" href="#" class="btn
+          btn-danger">Delete</a>     
+        </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal for delete comment confirmation -->
+  <div class="modal" id="deleteCommentModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -106,7 +139,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a id="deleteConfirm" href="#" class="btn
+        <a id="deleteCommentConfirm" href="#" class="btn
           btn-danger">Delete</a>     
         </div>
     </div>
