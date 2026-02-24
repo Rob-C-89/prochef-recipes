@@ -6,15 +6,23 @@
 {% block title %}Create Profile{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container form-container">
   <div class="row">
-    <div class="col-md-6 col-lg-4">
-      <h1>Create Your Profile</h1>
-
-      <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %} {{ profile_form|crispy }}
-        <button class="button" type="submit">Save</button>
-        <button class="button cancel-btn"><a href="{% url 'home' %}">Cancel</a></button>
+    <div class="col-12">
+      <h1 class="text-center form-heading">Create Your Profile</h1>
+      <p class="text-center form-subheading">Tell us about yourself and complete your ProChef profile</p>
+    </div>
+  </div>
+  
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      <form method="POST" enctype="multipart/form-data" class="generic-form">
+        {% csrf_token %}
+        {{ profile_form|crispy }}
+        <div class="form-actions text-center mt-4">
+          <button type="submit" class="button">Create Profile</button>
+          <a href="{% url 'home' %}" class="button cancel-btn">Cancel</a>
+        </div>
       </form>
     </div>
   </div>

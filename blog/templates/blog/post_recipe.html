@@ -6,7 +6,7 @@
 {% block title %}Create Recipe{% endblock %}
 
 {% block content %}
-<div class="container reduced-width">
+<div class="container form-container">
   <div class="row">
     <div class="col-12">
       <h1 class="text-center form-heading">Create and Post Your Recipe</h1>
@@ -16,7 +16,7 @@
   
   <div class="row justify-content-center">
     <div class="col-12 col-lg-10">
-      <form method="POST" enctype="multipart/form-data" class="recipe-form">
+      <form method="POST" enctype="multipart/form-data" class="generic-form">
         {% csrf_token %}
         {{ recipe_form|crispy }}
         <div class="form-actions text-center mt-4">
