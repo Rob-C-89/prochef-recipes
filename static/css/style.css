@@ -15,6 +15,12 @@ body {
     background-color: var(--primary-color);
 }
 
+.navbar-text {
+    color: var(--secondary-color) !important;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
 
 /* Button Styling */
 .button {
