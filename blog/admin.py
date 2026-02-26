@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import RecipePost, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
+
 @admin.register(RecipePost)
 class PostAdmin(SummernoteModelAdmin):
 
@@ -10,6 +11,5 @@ class PostAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('recipe_content',)
 
-# Register your models here.
-admin.site.register(Comment)
 
+admin.site.register(Comment)

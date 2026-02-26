@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-# Create your models here.
 
 # Recipe Post Model
 class RecipePost(models.Model):
@@ -21,7 +20,7 @@ class RecipePost(models.Model):
 
     def __str__(self):
         return f"{self.title} | written by {self.author}"
-    
+
 
 # Comment Model
 class Comment(models.Model):
@@ -37,4 +36,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} | by {self.author}"
-
