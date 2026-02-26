@@ -1,13 +1,13 @@
-const deleteCommentModalEl = document.getElementById("deleteCommentModal");
+const deleteCommentModal = document.getElementById("deleteCommentModal");
 const deleteCommentConfirm = document.getElementById("deleteCommentConfirm");
 const deleteCommentButton = document.querySelectorAll(".delete-comment-btn");
 
-const deleteRecipeModalEl = document.getElementById("deleteRecipeModal");
+const deleteRecipeModal = document.getElementById("deleteRecipeModal");
 const deleteRecipeConfirm = document.getElementById("deleteRecipeConfirm");
 const deleteRecipeButton = document.querySelector(".delete-recipe-btn");
 
-if (deleteRecipeModalEl && deleteRecipeConfirm && deleteRecipeButton) {
-  const deleteRecipeModal = new bootstrap.Modal(deleteRecipeModalEl);
+if (deleteRecipeModal && deleteRecipeConfirm && deleteRecipeButton) {
+  const deleteRecipeModal = new bootstrap.Modal(deleteRecipeModal);
   deleteRecipeButton.addEventListener("click", (e) => {
     const deleteUrl = e.currentTarget.getAttribute("data-delete-url");
     deleteRecipeConfirm.href = deleteUrl || "#";
@@ -15,8 +15,8 @@ if (deleteRecipeModalEl && deleteRecipeConfirm && deleteRecipeButton) {
   });
 }
 
-if (deleteCommentModalEl && deleteCommentConfirm && deleteCommentButton.length) {
-  const deleteCommentModal = new bootstrap.Modal(deleteCommentModalEl);
+if (deleteCommentModal && deleteCommentConfirm && deleteCommentButton.length) {
+  const deleteCommentModal = new bootstrap.Modal(deleteCommentModal);
   deleteCommentButton.forEach((button) => {
     button.addEventListener("click", (e) => {
       const deleteUrl = e.currentTarget.getAttribute("data-delete-url");
