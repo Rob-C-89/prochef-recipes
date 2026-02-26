@@ -42,7 +42,7 @@
   <div class="row">
     <div class="col">
       <h2>Recipe:</h2>
-      <p class="post-content">{{ post.recipe_content | safe }}</p>
+      <div class="post-content">{{ post.recipe_content | safe }}</div>
       {% if user.is_authenticated and post.author == user %}
       <div class="post-actions">
         <a href="{% url 'edit_recipe' post.pk %}" class="button edit-btn"
