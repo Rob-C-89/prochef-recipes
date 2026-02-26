@@ -1,8 +1,7 @@
-
 from django.shortcuts import render
-from .models import ContactMessage
 from .forms import ContactForm
 from django.contrib import messages
+
 
 # Create your views here.
 def contact_us(request):
@@ -26,4 +25,3 @@ def contact_us(request):
             'contact_form': contact_form
         },
     )
-    
