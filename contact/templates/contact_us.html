@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="container form-container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center form-heading">Contact Us</h1>
+      <p class="text-center form-subheading">Have any questions or feedback? We would love to hear from you! 
+        Please fill out the form below to get in touch with our team.</p>
+    </div>
+  </div>
+  
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      <form method="POST" class="generic-form">
+        {% csrf_token %}
+        {{ contact_form|crispy }}
+        <div class="form-actions text-center mt-4">
+          <button type="submit" class="button submit-btn">Send Message</button>
+          <a href="{% url 'home' %}" class="button cancel-btn">Cancel</a>
+        </div>
+      </form>
+
+    </div>
+  </div>        
+</div>
+{% endblock %}

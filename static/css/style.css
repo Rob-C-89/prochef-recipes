@@ -310,11 +310,19 @@ footer {
     margin: 0 0.5rem;
 }
 
-.contact-link {
+.fa-brands:hover {
+    color: var(--primary-color);
+}
+
+.contact-link a {
     color: var(--secondary-color);
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
+}
+
+.contact-link a:hover {
+    text-decoration: underline;
 }
 
 /* Mobile Responsiveness */
