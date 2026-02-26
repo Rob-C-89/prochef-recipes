@@ -4,6 +4,7 @@
 {% load account %}
 {% load crispy_forms_tags %}
 
+{% block title %}{% trans "Sign Up" %} | ProChef Recipes{% endblock %}
 {% block head_title %}{% trans "Sign Up" %}{% endblock %}
 
 {% block content %}
@@ -12,8 +13,7 @@
     <div class="col-12">
       <h2 class="text-center form-heading">{% trans "Sign Up" %}</h2>
       <p class="text-center form-subheading">
-        {% blocktrans %}
-        Welcome to ProChef Recipes! If you already have an
+        {% blocktrans %} Welcome to ProChef Recipes! If you already have an
         account, the please <a class="link" href="{{ login_url }}">log in</a>
         {% endblocktrans %}
       </p>
@@ -28,19 +28,19 @@
         method="post"
         action="{% url 'account_signup' %}"
       >
-      <div class="mt-4">
-        {% csrf_token %} {{ form|crispy }} {% if redirect_field_value %}
-        <input
-          type="hidden"
-          name="{{ redirect_field_name }}"
-          value="{{ redirect_field_value }}"
-        />
-        {% endif %}
-        <button class="button submit-btn" type="submit">
-          {% trans "Sign Up" %} &raquo;
-        </button>
-        <a href="{% url 'home' %}" class="button cancel-btn">Cancel</a>
-      </div>
+        <div class="mt-4">
+          {% csrf_token %} {{ form|crispy }} {% if redirect_field_value %}
+          <input
+            type="hidden"
+            name="{{ redirect_field_name }}"
+            value="{{ redirect_field_value }}"
+          />
+          {% endif %}
+          <button class="button submit-btn" type="submit">
+            {% trans "Sign Up" %} &raquo;
+          </button>
+          <a href="{% url 'home' %}" class="button cancel-btn">Cancel</a>
+        </div>
       </form>
     </div>
   </div>

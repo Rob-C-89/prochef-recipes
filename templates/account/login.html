@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load account %}
 
+{% block title %}{% trans "Sign In" %} | ProChef Recipes{% endblock %}
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
@@ -10,12 +11,12 @@
   <div class="row">
     <div class="col-12">
       <h2 class="mb-4 form-heading text-center">{% trans "Sign In" %}</h2>
-        <p class="text-center form-subheading">{% blocktrans %}Welcome to ProChef Recipes!
-          To post your own recipe, or comment on other recipes, please log in. If you don't have an account
-          yet, then please <a class="link" href="{{ signup_url }}">sign up</a>
-          first.
-          {% endblocktrans %}
-        </p>
+      <p class="text-center form-subheading">
+        {% blocktrans %}Welcome to ProChef Recipes! To post your own recipe, or
+        comment on other recipes, please log in. If you don't have an account
+        yet, then please <a class="link" href="{{ signup_url }}">sign up</a>
+        first. {% endblocktrans %}
+      </p>
     </div>
   </div>
   <div class="row justify-content-center">
@@ -28,9 +29,7 @@
           value="{{ redirect_field_value }}"
         />
         {% endif %}
-        <button type="submit" class="button">
-          {% trans "Sign In" %}
-        </button>
+        <button type="submit" class="button">{% trans "Sign In" %}</button>
       </form>
     </div>
   </div>

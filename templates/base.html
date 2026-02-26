@@ -9,7 +9,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProChef Recipes</title>
+    <title>{% block title %}ProChef Recipes{% endblock %}</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -124,51 +124,53 @@
     </main>
 
     <!-- Footer -->
-      <footer
-        class="d-flex flex-wrap justify-content-between align-items-center py-3 mt-4 border-top"
+    <footer
+      class="d-flex flex-wrap justify-content-between align-items-center py-3 mt-4 border-top"
+    >
+      <div class="col-md-4 container-md d-flex align-items-center">
+        <span class="mb-3 mb-md-0 ms-5">© 2025 ProChef Recipes</span>
+      </div>
+      <!-- Contact link to send a message to website owners/admin -->
+      <div class="col-md-4 container-md d-flex justify-content-center">
+        <span class="contact-link"
+          ><a href="{% url 'contact_us' %}">Contact us</a></span
+        >
+      </div>
+      <ul
+        class="nav col-md-4 container-md justify-content-end list-unstyled d-flex"
       >
-        <div class="col-md-4 container-md d-flex align-items-center">
-          <span class="mb-3 mb-md-0 ms-5"
-            >© 2025 ProChef Recipes</span
+        <li class="ms-3">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit our facebook page (opens in new tab)"
           >
-        </div>
-        <!-- Contact link to send a message to website owners/admin -->
-        <div class="col-md-4 container-md d-flex justify-content-center">
-          <span class="contact-link"><a href="{% url 'contact_us' %}">Contact us</a></span>
-        </div>
-        <ul class="nav col-md-4 container-md justify-content-end list-unstyled d-flex">
-          <li class="ms-3">
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              rel="noopener"
-              aria-label="Visit our facebook page (opens in new tab)"
-            >
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noopener"
-              aria-label="Visit our instagram page (opens in new tab)"
-            >
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-          </li>
-          <li class="ms-3 me-5">
-            <a
-              href="https://uk.pinterest.com/"
-              target="_blank"
-              rel="noopener"
-              aria-label="Visit our pinterest page (opens in new tab)"
-            >
-              <i class="fa-brands fa-pinterest"></i>
-            </a>
-          </li>
-        </ul>
-      </footer>
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </li>
+        <li class="ms-3">
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit our instagram page (opens in new tab)"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
+        <li class="ms-3 me-5">
+          <a
+            href="https://uk.pinterest.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit our pinterest page (opens in new tab)"
+          >
+            <i class="fa-brands fa-pinterest"></i>
+          </a>
+        </li>
+      </ul>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script

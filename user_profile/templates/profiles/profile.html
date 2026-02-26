@@ -1,38 +1,51 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}{{ profile.full_name }} | ProChef Recipes{% endblock %}
 {% block content %}
 
 <div class="container reduced-width">
   <div class="row">
     <div class="col">
-	  <h1 class="profile-name text-center">{{ profile.full_name }}</h1>
-    <p class="text-center">Username: {{ profile.user.username }}</p>
-	</div>
+      <h1 class="profile-name text-center">{{ profile.full_name }}</h1>
+      <p class="text-center">Username: {{ profile.user.username }}</p>
+    </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-	  <!-- Display profile picture or default if none uploaded -->
+      <!-- Display profile picture or default if none uploaded -->
       {% if 'placeholder' in profile.profile_pic.url %}
-	  <img src="{% static 'images/default_profile.jpg' %}" class="img-fluid profile-picture" alt="Default profile picture">
-	  {% else %}
-	  <img src="{{ profile.profile_pic.url }}" class="img-fluid profile-picture" alt="Profile picture for {{ profile.user.username }}">
-	  {% endif %}
+      <img
+        src="{% static 'images/default_profile.jpg' %}"
+        class="img-fluid profile-picture"
+        alt="Default profile picture"
+      />
+      {% else %}
+      <img
+        src="{{ profile.profile_pic.url }}"
+        class="img-fluid profile-picture"
+        alt="Profile picture for {{ profile.user.username }}"
+      />
+      {% endif %}
     </div>
     <div class="col-md-6">
-	  <p class="profile-current-role">Current Role: <br>
-		{{ profile.recent_role }}</p>
-	  <p class="profile-bio">Biography: <br>
-		{{ profile.bio }}</p>
+      <p class="profile-current-role">
+        Current Role: <br />
+        {{ profile.recent_role }}
+      </p>
+      <p class="profile-bio">
+        Biography: <br />
+        {{ profile.bio }}
+      </p>
     </div>
   </div>
   <!-- Display user's recipe posts -->
   <div class="row mt-4">
     <div class="col-12">
-	  <h2 class="text-center mb-4">Recipes</h2>
+      <h2 class="text-center mb-4">Recipes</h2>
     </div>
   </div>
-  
+
   <div class="row">
     {% for post in user_posts %}
     <div class="col-12 col-md-6 col-lg-4 mb-3">
@@ -58,11 +71,11 @@
               <a href="{% url 'post_detail' post.slug %}" class="post-link">
                 <h5 class="card-title">{{ post.title }}</h5>
               </a>
+              <p class="card-text">{{ post.summary }}</p>
               <p class="card-text">
-                {{ post.summary }}
-              </p>
-              <p class="card-text">
-                <small class="text-body-secondary">created {{ post.date_created }}</small>
+                <small class="text-body-secondary"
+                  >created {{ post.date_created }}</small
+                >
               </p>
             </div>
           </div>

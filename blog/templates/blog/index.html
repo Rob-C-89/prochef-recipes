@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% block title %}Home | ProChef Recipes{% endblock %}
 {% block content %}
 
 <header class="hero-header">
@@ -8,12 +9,11 @@
     <div class="hero-content">
       <h1 class="hero-title">Welcome to ProChef Recipes</h1>
       <p class="hero-subtitle">
-        Discover and share your favorite recipes with our passionate
-        community of professional cooks. Whether you're a seasoned chef or
-        just starting out, ProChef Recipes is the perfect place to find
-        inspiration, share your best recipes, and connect with industry experts. 
-        Join us today and start exploring a world of
-        delicious possibilities!
+        Discover and share your favorite recipes with our passionate community
+        of professional cooks. Whether you're a seasoned chef or just starting
+        out, ProChef Recipes is the perfect place to find inspiration, share
+        your best recipes, and connect with industry experts. Join us today and
+        start exploring a world of delicious possibilities!
       </p>
     </div>
   </div>
@@ -25,34 +25,38 @@
     <div class="card mb-3" style="max-width: 540px">
       <div class="row g-0">
         <div class="col-md-4">
-                {% if "placeholder" in post.image.url %}
-                <img
-                  class="img-fluid rounded-start"
-                  src="{% static 'images/default.png' %}"
-                  alt="placeholder image"
-                />
-                {% else %}
-                <img
-                  class="img-fluid rounded-start"
-                  src="{{ post.image.url }}"
-                  alt="{{ post.title }}"
-                />
-                {% endif %}        </div>
+          {% if "placeholder" in post.image.url %}
+          <img
+            class="img-fluid rounded-start"
+            src="{% static 'images/default.png' %}"
+            alt="placeholder image"
+          />
+          {% else %}
+          <img
+            class="img-fluid rounded-start"
+            src="{{ post.image.url }}"
+            alt="{{ post.title }}"
+          />
+          {% endif %}
+        </div>
         <div class="col-md-8">
           <div class="card-body">
             <a href="{% url 'post_detail' post.slug %}" class="post-link">
               <h5 class="card-title">{{ post.title }}</h5>
             </a>
-            <p class="card-text">
-              {{ post.summary }}
-            </p>
+            <p class="card-text">{{ post.summary }}</p>
             <p class="card-text">
               <small class="text-body-secondary">
-              by <a href="{% url 'view_profile' post.author.username %}">{{ post.author }}</a>
+                by
+                <a href="{% url 'view_profile' post.author.username %}"
+                  >{{ post.author }}</a
+                >
               </small>
             </p>
             <p class="card-text">
-              <small class="text-body-secondary">created {{ post.date_created }}</small>
+              <small class="text-body-secondary"
+                >created {{ post.date_created }}</small
+              >
             </p>
           </div>
         </div>
@@ -63,24 +67,22 @@
 </div>
 
 <!-- Pagination controls -->
- {% if is_paginated %}
-  <nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
-      {% if page_obj.has_previous %}
-      <li>
-        <a href="?page={{ page_obj.previous_page_number }}" class="page-link">
-          &laquo; PREVIOUS</a>
-      </li>
-      {% endif %} {% if page_obj.has_next %}
-      <li>
-        <a href="?page={{ page_obj.next_page_number }}" class="page-link">
-          NEXT &raquo;</a
-        >
-      </li>
-      {% endif %}
-    </ul>
-  </nav>
-{% endif %}
-
-
-{% endblock %}
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li>
+      <a href="?page={{ page_obj.previous_page_number }}" class="page-link">
+        &laquo; PREVIOUS</a
+      >
+    </li>
+    {% endif %} {% if page_obj.has_next %}
+    <li>
+      <a href="?page={{ page_obj.next_page_number }}" class="page-link">
+        NEXT &raquo;</a
+      >
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %} {% endblock %}
