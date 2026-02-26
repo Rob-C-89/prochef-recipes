@@ -13,7 +13,6 @@
         src="{% static 'images/default.png' %}"
         class="fluid detail-image"
         alt="Default image of a cook's workstation"
-        alt="placeholder image"
       />
       {% else %}
       <img
@@ -42,7 +41,7 @@
 <div class="container reduced-width">
   <div class="row">
     <div class="col">
-      <h3>Recipe:</h3>
+      <h2>Recipe:</h2>
       <p class="post-content">{{ post.recipe_content | safe }}</p>
       {% if user.is_authenticated and post.author == user %}
       <div class="post-actions">
@@ -113,18 +112,21 @@
   </div>
   {% endif %}
 
+</div>
+
   <!-- Modal for delete recipe confirmation -->
   <div
     class="modal"
     id="deleteRecipeModal"
     tabindex="-1"
-    aria-labelledby="deleteModalLabel"
+    role="dialog"
+    aria-labelledby="deleteRecipeModalLabel"
     aria-hidden="true"
   >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="deleteModalLabel">Delete Recipe</h5>
+          <h2 class="modal-title" id="deleteRecipeModalLabel">Delete Recipe</h2>
           <button
             type="button"
             class="btn-close"
@@ -157,13 +159,14 @@
     class="modal"
     id="deleteCommentModal"
     tabindex="-1"
-    aria-labelledby="deleteModalLabel"
+    role="dialog"
+    aria-labelledby="deleteCommentModalLabel"
     aria-hidden="true"
   >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="deleteModalLabel">Delete Comment</h5>
+          <h2 class="modal-title" id="deleteCommentModalLabel">Delete Comment</h2>
           <button
             type="button"
             class="btn-close"
@@ -193,4 +196,3 @@
   {% endblock content %} {% block extras %}
   <script src="{% static 'js/comments.js' %}"></script>
   {% endblock %}
-</div>
