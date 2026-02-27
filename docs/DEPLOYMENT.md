@@ -19,15 +19,10 @@ Deployment steps are as follows, after account setup:
 > This is a sample only; you would replace the values with your own if cloning/forking my repository.
 
 | Key | Value |
-
 | --- | --- |
-
 | `CLOUDINARY_URL` | user-inserts-own-cloudinary-url |
-
 | `DATABASE_URL` | user-inserts-own-postgres-database-url |
-
 | `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
-
 | `SECRET_KEY` | any-random-secret-key |
 
 Heroku needs some additional files in order to deploy properly.
