@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 const deleteProfileModalEl = document.getElementById("deleteProfileModal");
 const deleteProfileConfirm = document.getElementById("deleteProfileConfirm");
 const deleteProfileButton = document.querySelector(".delete-profile-btn");
