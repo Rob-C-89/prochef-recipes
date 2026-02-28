@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 const alerts = document.querySelectorAll('.alert');
 alerts.forEach(alert => {
   // Auto-close after 5 seconds (5000 milliseconds)
