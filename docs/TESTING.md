@@ -88,5 +88,71 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | user_profile | [urls.py](https://github.com/Rob-C-89/prochef-recipes/blob/main/user_profile/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Rob-C-89/prochef-recipes/main/user_profile/urls.py) | ![screenshot](../documentation/validation/py-user_profile-urls.png) |
 | user_profile | [views.py](https://github.com/Rob-C-89/prochef-recipes/blob/main/user_profile/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/Rob-C-89/prochef-recipes/main/user_profile/views.py) | ![screenshot](../documentation/validation/py-user_profile-views.png) |
 
+## Responsiveness
+
+
+
+
+⚠️ INSTRUCTIONS ⚠️
+
+
+
+
+Use this space to discuss testing the live/deployed site on various device sizes.
+
+
+
+
+The minimum requirement is to test the following 3 sizes:
+
+
+
+
+- Mobile
+- Tablet
+- Desktop
+
+
+
+
+**IMPORTANT**: You must provide screenshots of your results, to "prove" that you've actually tested them.
+
+
+
+
+Using the [amiresponsive](http://ami.responsivedesign.is) mockup images (*or similar*) does not meet the requirements. Consider using some of the built-in device sizes from the Developer Tools.
+
+
+
+
+If you have tested the project on your actual mobile phone or tablet, consider also including screenshots of these as well. It showcases a higher level of manual tests, and can be seen as a positive inclusion!
+
+
+
+
+⚠️ --- END --- ⚠️
+
+
+
+
+I've tested my deployed project to check for responsiveness issues.
+
+
+
+
+| Page | Mobile | Tablet | Desktop | Notes |
+| --- | --- | --- | --- | --- |
+| Register | ![screenshot](../documentation/responsiveness/mobile-register.png) | ![screenshot](../documentation/responsiveness/tablet-register.png) | ![screenshot](../documentation/responsiveness/desktop-register.png) | Works as expected |
+| Login | ![screenshot](../documentation/responsiveness/mobile-login.png) | ![screenshot](../documentation/responsiveness/tablet-login.png) | ![screenshot](../documentation/responsiveness/desktop-login.png) | Works as expected |
+| Home | ![screenshot](../documentation/responsiveness/mobile-home.png) | ![screenshot](../documentation/responsiveness/tablet-home.png) | ![screenshot](../documentation/responsiveness/desktop-home.png) | Works as expected |
+| Post Detail | ![screenshot](../documentation/responsiveness/mobile-post-detail.png) | ![screenshot](../documentation/responsiveness/tablet-post-detail.png) | ![screenshot](../documentation/responsiveness/desktop-post-detail.png) | Works as expected |
+| Create Profile | ![screenshot](../documentation/responsiveness/mobile-create-profile.png) | ![screenshot](../documentation/responsiveness/tablet-create-profile.png) | ![screenshot](../documentation/responsiveness/desktop-create-profile.png) | Works as expected |
+| My Profile | ![screenshot](../documentation/responsiveness/mobile-my-profile.png) | ![screenshot](../documentation/responsiveness/tablet-my-profile.png) | ![screenshot](../documentation/responsiveness/desktop-my-profile.png) | Works as expected |
+| Edit Profile | ![screenshot](../documentation/responsiveness/mobile-edit-profile.png) | ![screenshot](../documentation/responsiveness/tablet-edit-profile.png) | ![screenshot](../documentation/responsiveness/desktop-edit-profile.png) | Works as expected |
+| User Profile | ![screenshot](../documentation/responsiveness/mobile-user-profile.png) | ![screenshot](../documentation/responsiveness/tablet-user-profile.png) | ![screenshot](../documentation/responsiveness/desktop-user-profile.png) | Works as expected |
+| Post Recipe | ![screenshot](../documentation/responsiveness/mobile-post-recipe.png) | ![screenshot](../documentation/responsiveness/tablet-post-recipe.png) | ![screenshot](../documentation/responsiveness/desktop-post-recipe.png) | Collapsed 'no file chosen' on mobile not ideal, fix at a later date |
+| Edit Recipe | ![screenshot](../documentation/responsiveness/mobile-edit-recipe.png) | ![screenshot](../documentation/responsiveness/tablet-edit-recipe.png) | ![screenshot](../documentation/responsiveness/desktop-edit-recipe.png) | Collapsed 'no file chosen' on mobile not ideal, fix at a later date |
+| Contact Us | ![screenshot](../documentation/responsiveness/mobile-contact-us.png) | ![screenshot](../documentation/responsiveness/tablet-contact-us.png) | ![screenshot](../documentation/responsiveness/desktop-contact-us.png) | Works as expected |
+| 404 | ![screenshot](../documentation/responsiveness/mobile-404.png) | ![screenshot](../documentation/responsiveness/tablet-404.png) | ![screenshot](../documentation/responsiveness/desktop-404.png) | Works as expected |
 
 

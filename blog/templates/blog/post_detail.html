@@ -6,18 +6,18 @@
 
 <div class="container reduced-width">
   <div class="row">
-    <div class="col col-md-6">
+    <div class="col-12 col-md-6">
       <!-- Display default placeholder image if none uploaded-->
       {% if "placeholder" in post.image.url %}
       <img
         src="{% static 'images/default.png' %}"
-        class="fluid detail-image"
+        class="img-fluid w-100 detail-image"
         alt="Default image of a cook's workstation"
       >
       {% else %}
       <img
         src="{{ post.image.url }}"
-        class="fluid detail-image"
+        class="img-fluid w-100 detail-image"
         alt="Image for {{ post.title }}"
       >
       {% endif %}

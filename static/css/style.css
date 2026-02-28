@@ -60,8 +60,9 @@ main {
 .cancel-btn {
     background-color: #999999;
     color: white;
-    padding: 0.75rem 2rem;
-    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
     text-decoration: none;
     display: inline-block;
 }
@@ -308,7 +309,7 @@ footer {
     background-color: var(--accent-color);
     color: var(--secondary-color);
     padding: 1rem 0;
-    margin: 0;
+    margin-top: auto;
 }
 
 .fa-brands {
@@ -333,7 +334,7 @@ footer {
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .hero-header {
         height: 300px;
     }
@@ -351,6 +352,31 @@ footer {
     }
 }
 
+@media screen and (max-width: 576px) {
+    .hero-header {
+        height: auto;
+        min-height: 280px;
+    }
+
+    .hero-overlay {
+        padding: 1rem;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.75rem, 8vw, 2.25rem);
+        line-height: 1.2;
+        letter-spacing: 1px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
 /* Container Adjustments for Responsiveness */
 @media screen and (min-width: 1200px) {
     
@@ -360,7 +386,11 @@ footer {
 }
 
 @media screen and (max-width: 576px) {
-    
+    .detail-image {
+        max-width: 100%;
+        width: 100%;
+    }
+
     .reduced-width {
         width: 85%;
     }

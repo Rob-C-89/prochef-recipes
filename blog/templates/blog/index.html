@@ -24,22 +24,22 @@
     {% for post in object_list %}
     <div class="card mb-3" style="max-width: 540px">
       <div class="row g-0">
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           {% if "placeholder" in post.image.url %}
           <img
-            class="img-fluid rounded-start"
+            class="img-fluid w-100 rounded-start"
             src="{% static 'images/default.png' %}"
             alt="placeholder image"
           >
           {% else %}
           <img
-            class="img-fluid rounded-start"
+            class="img-fluid w-100 rounded-start"
             src="{{ post.image.url }}"
             alt="{{ post.title }}"
           >
           {% endif %}
         </div>
-        <div class="col-md-8">
+        <div class="col-12 col-md-8">
           <div class="card-body">
             <a href="{% url 'post_detail' post.slug %}" class="post-link">
               <h2 class="card-title">{{ post.title }}</h2>
