@@ -19,22 +19,22 @@
         src="{% static 'images/default_profile.jpg' %}"
         class="img-fluid profile-picture"
         alt="Default profile picture"
-      />
+      >
       {% else %}
       <img
         src="{{ profile.profile_pic.url }}"
         class="img-fluid profile-picture"
         alt="Profile picture for {{ profile.user.username }}"
-      />
+      >
       {% endif %}
     </div>
     <div class="col-md-6">
       <p class="profile-current-role">
-        Current Role: <br />
+        Current Role: <br >
         {{ profile.recent_role }}
       </p>
       <p class="profile-bio">
-        Biography: <br />
+        Biography: <br >
         {{ profile.bio }}
       </p>
     </div>
@@ -57,13 +57,13 @@
               class="img-fluid card-img-top"
               src="{% static 'images/default.png' %}"
               alt="placeholder image"
-            />
+            >
             {% else %}
             <img
               class="img-fluid card-img-top"
               src="{{ post.image.url }}"
               alt="{{ post.title }}"
-            />
+            >
             {% endif %}
           </div>
           <div class="col-md-12">
@@ -91,3 +91,4 @@
 </div>
 
 {% endblock content %}
+

@@ -13,13 +13,13 @@
         src="{% static 'images/default.png' %}"
         class="fluid detail-image"
         alt="Default image of a cook's workstation"
-      />
+      >
       {% else %}
       <img
         src="{{ post.image.url }}"
         class="fluid detail-image"
         alt="Image for {{ post.title }}"
-      />
+      >
       {% endif %}
     </div>
     <!-- Display post details -->
@@ -196,3 +196,4 @@
   {% endblock content %} {% block extras %}
   <script src="{% static 'js/comments.js' %}"></script>
   {% endblock %}
+

@@ -30,13 +30,13 @@
             class="img-fluid rounded-start"
             src="{% static 'images/default.png' %}"
             alt="placeholder image"
-          />
+          >
           {% else %}
           <img
             class="img-fluid rounded-start"
             src="{{ post.image.url }}"
             alt="{{ post.title }}"
-          />
+          >
           {% endif %}
         </div>
         <div class="col-md-8">
@@ -86,3 +86,4 @@
   </ul>
 </nav>
 {% endif %} {% endblock %}
+

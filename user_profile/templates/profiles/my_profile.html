@@ -45,13 +45,13 @@
               class="img-fluid card-img-top"
               src="{% static 'images/default.png' %}"
               alt="placeholder image"
-            />
+            >
             {% else %}
             <img
               class="img-fluid card-img-top"
               src="{{ post.image.url }}"
               alt="{{ post.title }}"
-            />
+            >
             {% endif %}
           </div>
           <div class="col-md-12">
