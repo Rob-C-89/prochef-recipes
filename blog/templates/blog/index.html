@@ -20,9 +20,10 @@
 </header>
 
 <div class="container-fluid recipe-post-container mt-4">
-  <div class="row">
+  <div class="row g-4">
     {% for post in object_list %}
-    <div class="card mb-3" style="max-width: 540px">
+    <div class="col-12 col-xl-6">
+      <div class="card h-100">
       <div class="row g-0">
         <div class="col-12 col-md-4">
           {% if "placeholder" in post.image.url %}
@@ -61,6 +62,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
     {% endfor %}
   </div>

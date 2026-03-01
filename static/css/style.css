@@ -379,7 +379,6 @@ footer {
 }
 /* Container Adjustments for Responsiveness */
 @media screen and (min-width: 1200px) {
-    
     .reduced-width {
         width: 70%;
     }
