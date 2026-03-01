@@ -23,18 +23,18 @@
   <div class="row g-4">
     {% for post in object_list %}
     <div class="col-12 col-xl-6">
-      <div class="card h-100">
-      <div class="row g-0">
-        <div class="col-12 col-md-4">
+      <div class="card h-100 recipe-card">
+      <div class="row g-0 h-100">
+        <div class="col-12 col-md-4 recipe-card-media">
           {% if "placeholder" in post.image.url %}
           <img
-            class="img-fluid w-100 rounded-start"
+            class="img-fluid w-100 rounded-start recipe-card-img"
             src="{% static 'images/default.webp' %}"
             alt="placeholder image"
           >
           {% else %}
           <img
-            class="img-fluid w-100 rounded-start"
+            class="img-fluid w-100 rounded-start recipe-card-img"
             src="{{ post.image_secure_url }}"
             alt="{{ post.title }}"
           >
