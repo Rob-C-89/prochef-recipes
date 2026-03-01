@@ -159,7 +159,6 @@ main {
     margin: auto;
     background-color: var(--secondary-color);
     border: 2px solid var(--accent-color);
-    border-radius: 0;
     overflow: hidden;
     padding: 0;
 }
