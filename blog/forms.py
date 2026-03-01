@@ -9,15 +9,12 @@ class CommentForm(forms.ModelForm):
 
 
 class RecipeForm(forms.ModelForm):
-    image = forms.ImageField(required=False)
-
     class Meta:
         model = RecipePost
         fields = ('title', 'image', 'summary', 'recipe_content')
 
 
-class EditRecipeForm(forms.ModelForm):
-    image = forms.ImageField(required=False)
+class EditRecipeForm(RecipeForm):
 
     class Meta:
         model = RecipePost

@@ -6,7 +6,7 @@ from django.utils.text import slugify
 from .models import RecipePost, Comment
 from user_profile.models import UserProfile
 from django.contrib.auth.decorators import login_required
-from .forms import CommentForm, RecipeForm
+from .forms import CommentForm, RecipeForm, EditRecipeForm
 
 
 # Post list view to show all recipes on the home page.
@@ -92,7 +92,7 @@ def edit_recipe(request, pk):
         return redirect('home')
 
     if request.method == 'POST':
-        recipe_form = RecipeForm(
+        recipe_form = EditRecipeForm(
             request.POST, request.FILES, instance=recipe_post)
         if recipe_form.is_valid():
             edited_recipe = recipe_form.save(commit=False)
@@ -102,7 +102,7 @@ def edit_recipe(request, pk):
                                  "Recipe updated successfully.")
             return redirect('post_detail', slug=edited_recipe.slug)
     else:
-        recipe_form = RecipeForm(instance=recipe_post)
+        recipe_form = EditRecipeForm(instance=recipe_post)
 
     return render(request, 'blog/edit_recipe.html',
                   {'recipe_form': recipe_form, 'recipe_post': recipe_post})
