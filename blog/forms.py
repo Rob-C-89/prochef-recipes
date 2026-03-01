@@ -24,3 +24,6 @@ class EditRecipeForm(forms.ModelForm):
     class Meta:
         model = RecipePost
         fields = ('title', 'image', 'summary', 'recipe_content')
+        widgets = {
+            'image': forms.FileInput(attrs={'accept': 'image/*'}),
+        }

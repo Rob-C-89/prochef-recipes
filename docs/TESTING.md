@@ -160,11 +160,8 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | --- | --- | --- | --- | --- |
 
 | User Authentication | Feature is expected to allow registered users to log in to the site. | Attempted to log in with valid and invalid credentials. | Login was successful with valid credentials; invalid credentials were rejected. | ![screenshot](../documentation/defensive/login.png) |
-
 | | Feature is expected to allow users to log out securely. | Logged out and tried accessing a restricted page ("My Profile"). | Access was denied after logout, redirected to log in. | ![screenshot](../documentation/defensive/logout.png) |
-
 | Guest Features | Feature is expected to allow guest users to read blog posts without registering. | Opened blog posts as a guest user. | Blog posts were fully accessible without logging in. | ![screenshot](documentation/defensive/view-recipe-detail-guest.png) |
-
 | | Feature is expected to block standard users from brute-forcing admin pages. | Attempted to navigate to admin-only pages by manipulating the URL (e.g., `/admin`). | Access was blocked, and a message was displayed showing denied access. | ![screenshot](documentation/defensive/brute-force.png) |
 
 
@@ -180,7 +177,7 @@ I now see the bnefit of documenting these issues, and moving forward with my pro
 | Forms too narrow on mobile screens | FIXED | CSS styling | ![screenshot](../documentation/bugs/forms-narrow-on-mobile.png) |
 | Hero section oversized on mobile screens | FIXED | CSS styling | ![screenshot](../documentation/bugs/homepage-mobile-hero-bug.png) |
 | Lighthouse HTTPS warning | FIXED | Secure URL link used | ![screenshot](../documentation/bugs/https-warning.png) |
-| Edit Recipe form not displaying filename | UNFIXED |  | ![screenshot](../documentation/bugs/recipe-image-bug-edit-recipe.png) |
+| Edit Recipe and Profile form not displaying filename | Temporary Fix | After spending a long time trying to manipulate the crispy form so it didn't display "currently: 'blank', and consequently resorting to ChatGPT to fix the problem, I still couldn't determine how to populate the currntly' block with a picture or filename/URL. Using ChatGPT I have removed the 'Currently' block. This is a compromise to me. It looks better than the initial issue, but is still not ideal. I would look to fix this to a higher standard once under less pressing time constraints. | ![screenshot](../documentation/bugs/recipe-image-bug-edit-recipe.png) |
 
 
 
