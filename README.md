@@ -24,7 +24,7 @@ I chose this subject for my personal project for Code Institute due to my backgr
 
 ![screenshot](documentation/mockup.png)
 
-source: [prochef-recipes amiresponsive](https://ui.dev/amiresponsive?url=https://prochef-recipes-4b9094305975.herokuapp.com)
+source: [techsini](https://techsini.com/multi-mockup/index.php)
 
 ## UX
 
@@ -92,9 +92,9 @@ source: [prochef-recipes amiresponsive](https://ui.dev/amiresponsive?url=https:/
 
 **User Flow**
 
-1. Guest users browse recipe content ? view pictures, read content, and see comments.
+1. Guest users browse recipe content, view pictures, read content, and see comments.
 
-2. Guest users register for an account ? log in to leave comments, create a profile, and post a recipe.
+2. Guest users register for an account, log in to leave comments, create a profile, and post a recipe.
 
 3. Registered and profiled users create, update, and manage recipe posts.
 
@@ -124,7 +124,7 @@ I used color-hex.com to generate my colour palette, based on the triadic colours
 
 - `#004C4C` accent colour.
 
-![screenshot](documentation/coolors.png)
+![screenshot](documentation/color-hex-triad.png)
 
 ### Typography
 
@@ -172,26 +172,24 @@ As a logged-in superuser/admin, I can delete recipe posts and users to maintain 
 
 ## Features
 
-?? INSTRUCTIONS ??
-
 ### Existing Features
 
 | Feature | Notes | Screenshot |
 | --- | --- | --- |
-| Recipe List | The homepage displays basic information about recipe posts, including image, title, summary and author | ![screenshot](documentation/features/blog-list.png) |
-| View Recipe Detail | Users can view the full recipe post details, including any comments. | ![screenshot](documentation/features/view-post.png) |
+| Recipe List | The homepage displays basic information about recipe posts, including image, title, summary and author | ![screenshot](documentation/features/home.png) |
+| View Recipe Detail | Users can view the full recipe post details, including any comments. | ![screenshot](documentation/features/post-detail.png) |
 | Register | Authentication is handled by allauth, allowing users to register accounts. | ![screenshot](documentation/features/register.png) |
 | Login | Authentication is handled by allauth, allowing users to log in to their existing accounts. | ![screenshot](documentation/features/login.png) |
 | Logout | Authentication is handled by allauth, allowing users to log out of their accounts. | ![screenshot](documentation/features/logout.png) |
 | Add Comments | Authenticated visitors can comment on recipe posts | ![screenshot](documentation/features/add-comment.png) |
 | Delete Comments | Authenticated visitors can delete their own comments. | ![screenshot](documentation/features/delete-comment.png) |
-| Create User Profile | Authenticated visitors can create a publicly viewable profile, with an image and information about themselves | |
-| Edit User Profile | Registered profiled users can edit their own profile | |
-| Delete User Profile | Registered profiled users can delete their own profile | |
-| Create Recipe Post | Registered profiled users can create/publish recipe posts, including setting a featured image using Cloudinary | ![screenshot](documentation/features/create-post.png) |
-| Edit Recipe Post | Recipe authors can edit their own posts. | ![screenshot](documentation/features/update-post.png) |
-| Delete Post | Recipe authors can delete their own posts. | ![screenshot](documentation/features/delete-post.png) |
-| Contact Page | Site visitors can send a contact form to the business owners. | ![screenshot](documentation/features/about.png) |
+| Create User Profile | Authenticated visitors can create a publicly viewable profile, with an image and information about themselves | ![screenshot](documentation\features\create-profile.png) |
+| Edit User Profile | Registered profiled users can edit their own profile | ![screenshot](documentation\features\edit-profile.png) |
+| Delete User Profile | Registered profiled users can delete their own profile | ![screenshot](documentation\features\delete-profile.png) |
+| Create Recipe Post | Registered profiled users can create/publish recipe posts, including setting a featured image using Cloudinary | ![screenshot](documentation/features/post-recipe.png) |
+| Edit Recipe Post | Recipe authors can edit their own posts. | ![screenshot](documentation/features/edit-recipe.png) |
+| Delete Recipe Post | Recipe authors can delete their own posts. | ![screenshot](documentation/features/delete-recipe.png) |
+| Contact Page | Site visitors can send a contact form to the business owners. | ![screenshot](documentation/features/contact-us.png) |
 | Pagination | Recipe posts are displayed in pages, with eight posts per page. This provides better navigation for users through the post list. | ![screenshot](documentation/features/pagination.png) |
 | User Feedback | Clear and obvious Django messages are used to provide feedback to user actions. | ![screenshot](documentation/features/messages.png) |
 | Heroku Deployment | The site is fully deployed to Heroku, making it accessible online and easy to manage. | ![screenshot](documentation/features/heroku.png) |
@@ -236,6 +234,8 @@ As a logged-in superuser/admin, I can delete recipe posts and users to maintain 
 ### Data Model
 
 I have used [Mermaid](https://mermaid.ai/d/36f3bd42-c2a3-434f-815a-6cea12bc3137) to generate an interactive ERD of my project.
+
+![screenshot](documentation\erd-mermaid.png)
 
 ## Agile Development Process
 
