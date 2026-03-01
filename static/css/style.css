@@ -352,6 +352,7 @@ footer {
     }
 }
 
+/* Hero styles for small screens */
 @media screen and (max-width: 576px) {
     .hero-header {
         height: auto;

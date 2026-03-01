@@ -113,13 +113,11 @@ I've tested my deployed project to check for responsiveness issues.
 
 ## Browser Compatibility
 
+I've tested my deployed project on the below browsers to check for compatibility issues, with all pages working as expected.
 
 - [Chrome](https://www.google.com/chrome)
 - [Firefox (Developer Edition)](https://www.mozilla.org/firefox)
 - [Edge](https://www.microsoft.com/edge)
-
-
-I've tested my deployed project on multiple browsers to check for compatibility issues, with all pages working as expected.
 
 ## Lighthouse Audit
 
@@ -141,6 +139,35 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Edit Recipe | ![screenshot](../documentation/lighthouse/mobile-edit-recipe.png) | ![screenshot](../documentation/lighthouse/desktop-edit-recipe.png) |
 | Contact Us | ![screenshot](../documentation/lighthouse/mobile-contact-us.png) | ![screenshot](../documentation/lighthouse/desktop-contact-us.png) |
 | 404 | ![screenshot](../documentation/lighthouse/mobile-404.png) | ![screenshot](../documentation/lighthouse/desktop-404.png) |
+
+## User Story Testing
+
+| User Story | Result | Screenshot |
+| --- | --- | --- |
+| As a Site User, I can view recipes on the website and click on a recipe post to read the the full text. | PASS | ![screenshot](../documentation/manual-testing/post-detail-test.png) |
+| As a site user, I can view comments on an each recipe post so that I can read the conversation. | PASS | ![screenshot](../documentation/manual-testing/post-detail-test.png) |
+| As a user, I can register an account on the website so that I can access all the features of the website. | PASS | ![screenshot](../documentation/manual-testing/register-test.png) |
+| As a logged-in user, I can create a profile for the site, allowing me to showcase my bio and credentials to other users. | PASS | ![screenshot](../documentation/manual-testing/create-profile-test.png) |
+| As a logged-in user, I can create and post my own recipes to contribute to the website content and community. | PASS | ![screenshot](../documentation/manual-testing/post-recipe-test.png) |
+| As a logged-in user, I can add my own comments to contribute to the conversation around each recipe post. | PASS | ![screenshot](../documentation/manual-testing/comment-test.png) |
+| As a logged-in user, I can delete my own comments to have control over my contributions to the site. | PASS | ![screenshot](../documentation/manual-testing/delete-comment-test.png) |
+| As a logged-in website user, I want to be able to contact the site-owners for any number of reasons, from reporting issues, suggesting changes to the user experience, etc. | PASS | ![screenshot](../documentation/manual-testing/contact-test.png) |
+| As a logged-in superuser/admin, I can delete recipe posts and users to maintain website quality. | PASS | ![screenshot](../documentation/manual-testing/admin-test.png) |
+
+## Bugs and Issues
+
+I have documented some bugs and issues below.
+
+I now see the bnefit of documenting these issues, and moving forward with my projects will be keeping much more comprehensive records. I also plan to use Git Issues to aid with this.
+
+| Bug/Issue | Status | Notes | Screenshot |
+| --- | --- | --- | --- |
+| Footer too high/floating | FIXED | Correct use of MT-AUTO  | ![screenshot](../documentation/bugs/footer-too-high-404.png) |
+| Forms too narrow on mobile screens | FIXED | CSS styling | ![screenshot](../documentation/bugs/forms-narrow-on-mobile.png) |
+| Hero section oversized on mobile screens | FIXED | CSS styling | ![screenshot](../documentation/bugs/homepage-mobile-hero-bug.png) |
+| Lighthouse HTTPS warning | FIXED | Secure URL link used | ![screenshot](../documentation/bugs/https-warning.png) |
+| Edit Recipe form not displaying filename | UNFIXED |  | ![screenshot](../documentation/bugs/recipe-image-bug-edit-recipe.png) |
+
 
 
 
