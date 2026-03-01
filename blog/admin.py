@@ -5,6 +5,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(RecipePost)
 class PostAdmin(SummernoteModelAdmin):
+    """Admin configuration for recipe posts with Summernote editing."""
 
     list_display = ('title', 'slug',)
     search_fields = ['title']

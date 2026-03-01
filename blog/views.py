@@ -9,15 +9,16 @@ from django.contrib.auth.decorators import login_required
 from .forms import CommentForm, RecipeForm, EditRecipeForm
 
 
-# Post list view to show all recipes on the home page.
 class PostList(generic.ListView):
+    """Display a paginated list of recipe posts on the homepage."""
+
     queryset = RecipePost.objects.all()
     template_name = "blog/index.html"
     paginate_by = 8
 
 
-# Post detail view to show the details of a recipe and its comments.
 def post_detail(request, slug):
+    """Display a recipe post and handle new comment submissions."""
     queryset = RecipePost.objects.all()
     post = get_object_or_404(queryset, slug=slug)
 

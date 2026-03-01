@@ -1,8 +1,8 @@
 from django.db import models
 
 
-# ContactMessage model to store messages sent through the contact form.
 class ContactMessage(models.Model):
+    """Stores a contact form message submitted by a site visitor."""
     name = models.CharField(max_length=100)
     email = models.EmailField()
     message = models.TextField()

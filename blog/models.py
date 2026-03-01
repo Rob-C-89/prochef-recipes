@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-# Recipe Post Model
 class RecipePost(models.Model):
+    """A user-authored recipe post with optional Cloudinary image."""
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
@@ -28,8 +28,8 @@ class RecipePost(models.Model):
         return f"{self.title} | written by {self.author}"
 
 
-# Comment Model
 class Comment(models.Model):
+    """A comment made by a user on a recipe post."""
     post = models.ForeignKey(
         RecipePost, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(

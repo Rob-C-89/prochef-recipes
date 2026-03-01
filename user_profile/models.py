@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-# Create your models here.
 class UserProfile(models.Model):
+    """Extended profile information linked to a Django user account."""
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name='profile_name')
     full_name = models.CharField(max_length=200, default='')
