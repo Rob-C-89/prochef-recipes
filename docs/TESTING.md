@@ -91,50 +91,6 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 ## Responsiveness
 
 
-
-
-⚠️ INSTRUCTIONS ⚠️
-
-
-
-
-Use this space to discuss testing the live/deployed site on various device sizes.
-
-
-
-
-The minimum requirement is to test the following 3 sizes:
-
-
-
-
-- Mobile
-- Tablet
-- Desktop
-
-
-
-
-**IMPORTANT**: You must provide screenshots of your results, to "prove" that you've actually tested them.
-
-
-
-
-Using the [amiresponsive](http://ami.responsivedesign.is) mockup images (*or similar*) does not meet the requirements. Consider using some of the built-in device sizes from the Developer Tools.
-
-
-
-
-If you have tested the project on your actual mobile phone or tablet, consider also including screenshots of these as well. It showcases a higher level of manual tests, and can be seen as a positive inclusion!
-
-
-
-
-⚠️ --- END --- ⚠️
-
-
-
-
 I've tested my deployed project to check for responsiveness issues.
 
 
@@ -154,5 +110,42 @@ I've tested my deployed project to check for responsiveness issues.
 | Edit Recipe | ![screenshot](../documentation/responsiveness/mobile-edit-recipe.png) | ![screenshot](../documentation/responsiveness/tablet-edit-recipe.png) | ![screenshot](../documentation/responsiveness/desktop-edit-recipe.png) | Collapsed 'no file chosen' on mobile not ideal, fix at a later date |
 | Contact Us | ![screenshot](../documentation/responsiveness/mobile-contact-us.png) | ![screenshot](../documentation/responsiveness/tablet-contact-us.png) | ![screenshot](../documentation/responsiveness/desktop-contact-us.png) | Works as expected |
 | 404 | ![screenshot](../documentation/responsiveness/mobile-404.png) | ![screenshot](../documentation/responsiveness/tablet-404.png) | ![screenshot](../documentation/responsiveness/desktop-404.png) | Works as expected |
+
+## Browser Compatibility
+
+
+- [Chrome](https://www.google.com/chrome)
+- [Firefox (Developer Edition)](https://www.mozilla.org/firefox)
+- [Edge](https://www.microsoft.com/edge)
+
+
+I've tested my deployed project on multiple browsers to check for compatibility issues, with all pages working as expected.
+
+## Lighthouse Audit
+
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, and mobile results tend to be lower than desktop.
+
+
+| Page | Mobile | Desktop |
+| --- | --- | --- |
+| Register | ![screenshot](../documentation/lighthouse/mobile-register.png) | ![screenshot](../documentation/lighthouse/desktop-register.png) |
+| Login | ![screenshot](../documentation/lighthouse/mobile-login.png) | ![screenshot](../documentation/lighthouse/desktop-login.png) |
+| Home | ![screenshot](../documentation/lighthouse/mobile-home.png) | ![screenshot](../documentation/lighthouse/desktop-home.png) |
+| Post Detail | ![screenshot](../documentation/lighthouse/mobile-post-detail.png) | ![screenshot](../documentation/lighthouse/desktop-post-detail.png) |
+| Create Profile | ![screenshot](../documentation/lighthouse/mobile-create-profile.png) | ![screenshot](../documentation/lighthouse/desktop-create-profile.png) |
+| My Profile | ![screenshot](../documentation/lighthouse/mobile-my-profile.png) | ![screenshot](../documentation/lighthouse/desktop-my-profile.png) |
+| Edit Profile | ![screenshot](../documentation/lighthouse/mobile-edit-profile.png) | ![screenshot](../documentation/lighthouse/desktop-edit-profile.png) |
+| User Profile | ![screenshot](../documentation/lighthouse/mobile-user-profile.png) | ![screenshot](../documentation/lighthouse/desktop-user-profile.png) |
+| Post Recipe | ![screenshot](../documentation/lighthouse/mobile-post-recipe.png) | ![screenshot](../documentation/lighthouse/desktop-post-recipe.png) |
+| Edit Recipe | ![screenshot](../documentation/lighthouse/mobile-edit-recipe.png) | ![screenshot](../documentation/lighthouse/desktop-edit-recipe.png) |
+| Contact Us | ![screenshot](../documentation/lighthouse/mobile-contact-us.png) | ![screenshot](../documentation/lighthouse/desktop-contact-us.png) |
+| 404 | ![screenshot](../documentation/lighthouse/mobile-404.png) | ![screenshot](../documentation/lighthouse/desktop-404.png) |
+
+
+
+
+
+
 
 

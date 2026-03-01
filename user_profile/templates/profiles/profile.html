@@ -16,7 +16,7 @@
       <!-- Display profile picture or default if none uploaded -->
       {% if 'placeholder' in profile.profile_pic.url %}
       <img
-        src="{% static 'images/default_profile.jpg' %}"
+        src="{% static 'images/default_profile.webp' %}"
         class="img-fluid profile-picture"
         alt="Default profile picture"
       >
@@ -55,7 +55,7 @@
             {% if "placeholder" in post.image.url %}
             <img
               class="img-fluid card-img-top"
-              src="{% static 'images/default.png' %}"
+              src="{% static 'images/default.webp' %}"
               alt="placeholder image"
             >
             {% else %}
