@@ -22,7 +22,7 @@
       >
       {% else %}
       <img
-        src="{{ profile.profile_pic.url }}"
+        src="{{ profile.profile_pic_secure_url }}"
         class="img-fluid profile-picture"
         alt="Profile picture for {{ profile.user.username }}"
       >
@@ -61,7 +61,7 @@
             {% else %}
             <img
               class="img-fluid card-img-top"
-              src="{{ post.image.url }}"
+              src="{{ post.image_secure_url }}"
               alt="{{ post.title }}"
             >
             {% endif %}

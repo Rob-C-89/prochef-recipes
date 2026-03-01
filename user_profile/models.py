@@ -16,5 +16,11 @@ class UserProfile(models.Model):
     class Meta:
         ordering = ['-created_at']
 
+    @property
+    def profile_pic_secure_url(self):
+        if self.profile_pic:
+            return self.profile_pic.build_url(secure=True)
+        return ""
+
     def __str__(self):
         return f"{self.user.username}'s Profile"

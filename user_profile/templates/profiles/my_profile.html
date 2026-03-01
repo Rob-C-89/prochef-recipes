@@ -17,7 +17,7 @@
       {% if 'placeholder' in profile.profile_pic.url %}
     <img src="{% static 'images/default_profile.webp' %}" class="img-fluid profile-picture" alt="Default profile picture">
 	  {% else %}
-	  <img src="{{ profile.profile_pic.url }}" class="img-fluid profile-picture" alt="Profile picture for {{ profile.user.username }}">
+    <img src="{{ profile.profile_pic_secure_url }}" class="img-fluid profile-picture" alt="Profile picture for {{ profile.user.username }}">
 	  {% endif %}
     </div>
     <div class="col-md-6">
@@ -47,9 +47,9 @@
               alt="placeholder image"
             >
             {% else %}
-            <img
-              class="img-fluid card-img-top"
-              src="{{ post.image.url }}"
+              <img
+                class="img-fluid card-img-top"
+                src="{{ post.image_secure_url }}"
               alt="{{ post.title }}"
             >
             {% endif %}

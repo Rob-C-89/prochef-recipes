@@ -18,6 +18,12 @@ class RecipePost(models.Model):
     class Meta:
         ordering = ["-date_created"]
 
+    @property
+    def image_secure_url(self):
+        if self.image:
+            return self.image.build_url(secure=True)
+        return ""
+
     def __str__(self):
         return f"{self.title} | written by {self.author}"
 
