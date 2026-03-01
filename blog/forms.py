@@ -18,7 +18,7 @@ class RecipeForm(forms.ModelForm):
         fields = ('title', 'image', 'summary', 'recipe_content')
 
 
-class EditRecipeForm(RecipeForm):
+class EditRecipeForm(forms.ModelForm):
     """Form for editing an existing recipe post."""
 
     class Meta:

@@ -154,6 +154,20 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | As a logged-in website user, I want to be able to contact the site-owners for any number of reasons, from reporting issues, suggesting changes to the user experience, etc. | PASS | ![screenshot](../documentation/manual-testing/contact-test.png) |
 | As a logged-in superuser/admin, I can delete recipe posts and users to maintain website quality. | PASS | ![screenshot](../documentation/manual-testing/admin-test.png) |
 
+## Defensive Programming
+
+| Page | Expectation | Test | Result | Screenshot |
+| --- | --- | --- | --- | --- |
+
+| User Authentication | Feature is expected to allow registered users to log in to the site. | Attempted to log in with valid and invalid credentials. | Login was successful with valid credentials; invalid credentials were rejected. | ![screenshot](../documentation/defensive/login.png) |
+
+| | Feature is expected to allow users to log out securely. | Logged out and tried accessing a restricted page ("My Profile"). | Access was denied after logout, redirected to log in. | ![screenshot](../documentation/defensive/logout.png) |
+
+| Guest Features | Feature is expected to allow guest users to read blog posts without registering. | Opened blog posts as a guest user. | Blog posts were fully accessible without logging in. | ![screenshot](documentation/defensive/view-recipe-detail-guest.png) |
+
+| | Feature is expected to block standard users from brute-forcing admin pages. | Attempted to navigate to admin-only pages by manipulating the URL (e.g., `/admin`). | Access was blocked, and a message was displayed showing denied access. | ![screenshot](documentation/defensive/brute-force.png) |
+
+
 ## Bugs and Issues
 
 I have documented some bugs and issues below.
