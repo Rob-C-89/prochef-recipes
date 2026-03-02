@@ -21,6 +21,11 @@ def create_profile(request):
             profile = profile_form.save(commit=False)
             profile.user = request.user
             profile.save()
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                "Profile created successfully."
+            )
             return redirect('my_profile')
     else:
         profile_form = UserProfileForm()
@@ -42,6 +47,11 @@ def edit_profile(request):
                                        request.FILES, instance=profile)
         if profile_form.is_valid():
             profile_form.save()
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                "Profile updated successfully."
+            )
             return redirect('my_profile')
     else:
         profile_form = UserProfileForm(instance=profile)

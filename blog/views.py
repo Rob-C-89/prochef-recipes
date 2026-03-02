@@ -32,6 +32,8 @@ def post_detail(request, slug):
             comment.author = request.user
             comment.post = post
             comment.save()
+            messages.add_message(request, messages.SUCCESS,
+                                 "Comment added successfully.")
             return redirect('post_detail', slug=post.slug)
     else:
         comment_form = CommentForm()
