@@ -62,13 +62,15 @@ source: [techsini](https://techsini.com/multi-mockup/index.php)
 
 **Content Requirements**
 
-- Recipe post management (create, read, update and delete).
+- View recipe posts as a list, with post detail available to all website visitors.
 
-- Comment and recipe post moderation and management tools.
+- User account features (register, log in, recipe posting, delete comments). Defensive programming to limit features to logged-in users.
 
-- User account features (register, log in, recipe posting, delete comments).
+- Comment and recipe post moderation and management tools for admin.
 
-- User profile creation.
+- User profile creation, with edit and delete tools.
+
+- Recipe post management (create, read, update and delete), limited to logged-in users who have created a profile.
 
 - Contact feature to allow users to message the owners.
 
@@ -96,9 +98,10 @@ source: [techsini](https://techsini.com/multi-mockup/index.php)
 
 2. Guest users register for an account, log in to leave comments, create a profile, and post a recipe.
 
-3. Registered and profiled users create, update, and manage recipe posts.
+4. Registered users leave and delete comments.
 
-4. Registered users leave comments.
+3. Registered and profiled users can create, update, and delete recipe posts.
+
 
 #### 4. Skeleton
 
@@ -128,11 +131,19 @@ I used color-hex.com to generate my colour palette, based on the triadic colours
 
 ### Typography
 
-- [Libre Franklin](https://fonts.google.com/specimen/Libre+Franklin) was used for the primary headers and titles.
+- [Libre Franklin](https://fonts.google.com/specimen/Libre+Franklin) was used for the primary headers and titles, credit to Google Fonts.
 
-- [Font Awesome](https://fontawesome.com) icons were used for the social media icons in the footer.
+- [Font Awesome](https://fontawesome.com) icons were used for the social media icons in the footer and the favicon.
 
 ## Wireframes
+
+
+| Page | Desktop | Tablet |
+| --- | --- | --- |
+| Home | ![screenshot](documentation/wireframes/wireframe-home.png) | ![screenshot](documentation/wireframes/mobile-wireframe-home.png) |
+| Post Detail | ![screenshot](documentation/wireframes/wireframe-post-detail.png) | ![screenshot](documentation/wireframes/mobile-wireframe-post-detail.png) |
+| User Profile | ![screenshot](documentation/wireframes/wirframe-profile.png) | ![screenshot](documentation/wireframes/mobile-wireframe-user-profile.png) |
+| Form | ![screenshot](documentation/wireframes/wireframe-form.png) | ![screenshot](documentation/wireframes/mobile-wireframe-form.png) |
 
 
 
@@ -192,6 +203,8 @@ As a logged-in superuser/admin, I can delete recipe posts and users to maintain 
 - **Edit Comments**: Comment authors can edit their own comments, fixing typos etc. without the need to delete and re-write their comment.
 
 - **Like/upvote Recipe Posts**: Create a points-based system, bumping popular or highly-rated recipes with more likes/upvotes up the display list or search results.
+
+- **User messages**: Allow users to message each other through the website, to foster community and collaboration. 
 
 ## Tools & Technologies
 

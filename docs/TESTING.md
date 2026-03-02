@@ -106,8 +106,8 @@ I've tested my deployed project to check for responsiveness issues.
 | My Profile | ![screenshot](../documentation/responsiveness/mobile-my-profile.png) | ![screenshot](../documentation/responsiveness/tablet-my-profile.png) | ![screenshot](../documentation/responsiveness/desktop-my-profile.png) | Works as expected |
 | Edit Profile | ![screenshot](../documentation/responsiveness/mobile-edit-profile.png) | ![screenshot](../documentation/responsiveness/tablet-edit-profile.png) | ![screenshot](../documentation/responsiveness/desktop-edit-profile.png) | Works as expected |
 | User Profile | ![screenshot](../documentation/responsiveness/mobile-user-profile.png) | ![screenshot](../documentation/responsiveness/tablet-user-profile.png) | ![screenshot](../documentation/responsiveness/desktop-user-profile.png) | Works as expected |
-| Post Recipe | ![screenshot](../documentation/responsiveness/mobile-post-recipe.png) | ![screenshot](../documentation/responsiveness/tablet-post-recipe.png) | ![screenshot](../documentation/responsiveness/desktop-post-recipe.png) | Collapsed 'no file chosen' on mobile not ideal, fix at a later date |
-| Edit Recipe | ![screenshot](../documentation/responsiveness/mobile-edit-recipe.png) | ![screenshot](../documentation/responsiveness/tablet-edit-recipe.png) | ![screenshot](../documentation/responsiveness/desktop-edit-recipe.png) | Collapsed 'no file chosen' on mobile not ideal, fix at a later date |
+| Post Recipe | ![screenshot](../documentation/responsiveness/mobile-post-recipe.png) | ![screenshot](../documentation/responsiveness/tablet-post-recipe.png) | ![screenshot](../documentation/responsiveness/desktop-post-recipe.png) | Works as expected|
+| Edit Recipe | ![screenshot](../documentation/responsiveness/mobile-edit-recipe.png) | ![screenshot](../documentation/responsiveness/tablet-edit-recipe.png) | ![screenshot](../documentation/responsiveness/desktop-edit-recipe.png) | Works as expected |
 | Contact Us | ![screenshot](../documentation/responsiveness/mobile-contact-us.png) | ![screenshot](../documentation/responsiveness/tablet-contact-us.png) | ![screenshot](../documentation/responsiveness/desktop-contact-us.png) | Works as expected |
 | 404 | ![screenshot](../documentation/responsiveness/mobile-404.png) | ![screenshot](../documentation/responsiveness/tablet-404.png) | ![screenshot](../documentation/responsiveness/desktop-404.png) | Works as expected |
 
@@ -158,11 +158,10 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 | Page | Expectation | Test | Result | Screenshot |
 | --- | --- | --- | --- | --- |
-
 | User Authentication | Feature is expected to allow registered users to log in to the site. | Attempted to log in with valid and invalid credentials. | Login was successful with valid credentials; invalid credentials were rejected. | ![screenshot](../documentation/defensive/login.png) |
 | | Feature is expected to allow users to log out securely. | Logged out and tried accessing a restricted page ("My Profile"). | Access was denied after logout, redirected to log in. | ![screenshot](../documentation/defensive/logout.png) |
-| Guest Features | Feature is expected to allow guest users to read blog posts without registering. | Opened blog posts as a guest user. | Blog posts were fully accessible without logging in. | ![screenshot](documentation/defensive/view-recipe-detail-guest.png) |
-| | Feature is expected to block standard users from brute-forcing admin pages. | Attempted to navigate to admin-only pages by manipulating the URL (e.g., `/admin`). | Access was blocked, and a message was displayed showing denied access. | ![screenshot](documentation/defensive/brute-force.png) |
+| Guest Features | Feature is expected to allow guest users to read blog posts without registering. | Opened blog posts as a guest user. | Blog posts were fully accessible without logging in. | ![screenshot](../documentation/defensive/view-recipe-detail-guest.png) |
+| | Feature is expected to block standard users from brute-forcing admin pages. | Attempted to navigate to admin-only pages by manipulating the URL (e.g., `/admin`). | Access was blocked, and a message was displayed showing denied access. | ![screenshot](../documentation/defensive/brute-force.png) |
 
 
 ## Bugs and Issues
