@@ -168,7 +168,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 I have documented some bugs and issues below.
 
-I now see the bnefit of documenting these issues, and moving forward with my projects will be keeping much more comprehensive records. I also plan to use Git Issues to aid with this.
+I now see the benefit of documenting these issues, and moving forward with my projects will be keeping much more comprehensive records. I also plan to use Git Issues to aid with this.
 
 | Bug/Issue | Status | Notes | Screenshot |
 | --- | --- | --- | --- |

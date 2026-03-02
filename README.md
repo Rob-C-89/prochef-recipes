@@ -84,7 +84,7 @@ source: [techsini](https://techsini.com/multi-mockup/index.php)
 
 - Links to Home, Register, Login/Logout, My Profile/Create Profile, Post Recipe
 
-- **Hierarchy**:
+**Hierarchy**:
 
 - Hero image with text making the site's purpose evident to visitors.
 
@@ -182,9 +182,9 @@ As a logged-in superuser/admin, I can delete recipe posts and users to maintain 
 | Logout | Authentication is handled by allauth, allowing users to log out of their accounts. | ![screenshot](documentation/features/logout.png) |
 | Add Comments | Authenticated visitors can comment on recipe posts | ![screenshot](documentation/features/add-comment.png) |
 | Delete Comments | Authenticated visitors can delete their own comments. | ![screenshot](documentation/features/delete-comment.png) |
-| Create User Profile | Authenticated visitors can create a publicly viewable profile, with an image and information about themselves | ![screenshot](documentation\features\create-profile.png) |
-| Edit User Profile | Registered profiled users can edit their own profile | ![screenshot](documentation\features\edit-profile.png) |
-| Delete User Profile | Registered profiled users can delete their own profile | ![screenshot](documentation\features\delete-profile.png) |
+| Create User Profile | Authenticated visitors can create a publicly viewable profile, with an image and information about themselves | ![screenshot](documentation/features/create-profile.png) |
+| Edit User Profile | Registered profiled users can edit their own profile | ![screenshot](documentation/features/edit-profile.png) |
+| Delete User Profile | Registered profiled users can delete their own profile | ![screenshot](documentation/features/delete-profile.png) |
 | Create Recipe Post | Registered profiled users can create/publish recipe posts, including setting a featured image using Cloudinary | ![screenshot](documentation/features/post-recipe.png) |
 | Edit Recipe Post | Recipe authors can edit their own posts. | ![screenshot](documentation/features/edit-recipe.png) |
 | Delete Recipe Post | Recipe authors can delete their own posts. | ![screenshot](documentation/features/delete-recipe.png) |
@@ -236,7 +236,7 @@ As a logged-in superuser/admin, I can delete recipe posts and users to maintain 
 
 I have used [Mermaid](https://mermaid.ai/d/36f3bd42-c2a3-434f-815a-6cea12bc3137) to generate an interactive ERD of my project.
 
-![screenshot](documentation\erd-mermaid.png)
+![screenshot](documentation/erd-mermaid.png)
 
 ## Agile Development Process
 
